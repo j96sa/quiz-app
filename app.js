@@ -1,4 +1,4 @@
-import {call} from "./components/q1.js"
+import Router from "./Router.js"
+import {Home} from "./components/home/home.js"
 
-call()
-console.log("ok");
+Router();

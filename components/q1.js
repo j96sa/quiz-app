@@ -1,1 +1,0 @@
-export const call = ()=> console.log("q1");

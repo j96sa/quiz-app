@@ -1,12 +1,11 @@
-.home{
-    min-height: 100vh;
+.home{    
     margin: 0;
     background-image: url("https://i.pinimg.com/originals/73/37/dd/7337dd152216decafff639f1761ff09e.jpg");
     background-size:cover ;
 
     .filter{
         height: 100vh;        
-        backdrop-filter: blur(.3rem);
+        backdrop-filter: blur(.5rem);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -14,10 +13,9 @@
 
     
     .hero{        
-        width: 95%;
+        width: 95%;        
         margin: 0 auto;        
         text-align: center;
-        font-size: 1.8rem;
         font-weight: 700;         
         flex-grow: 1;
         display: flex;
@@ -34,36 +32,36 @@
             }
 
             a{
-                font-size: 1.3rem;
+                font-size: $fsm-m;
                 align-self: center;
-                color: #AC0700;
+                color: $red;
+                cursor: pointer;
             }
 
             select{
                 width: fit-content;            
                 border-radius: 15px;
                 outline: none;  
-                background-color: #AC0700; 
-                color: #fff;             
+                background-color: $red; 
+                color: $white;  
+                cursor: pointer;           
             }            
         }
 
         article{
             flex-grow: 1;            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #C70039;
+            display: flex;                        
+            align-items: center;            
     
             p{
-                color: #211768;
-                font-size: 1.3rem;
-                margin-top: 30px;
+                max-width:681px ;
+                color: $purple;
+                font-size: $fsm-m;                
+                margin: 30px auto 0 auto;
                 span{
-                    font-family: 'Merriweather', serif;
-                    //color: #E29C1F;
-                    color:#F3A317;
-                    font-size: 2rem;
+                    font-family: $ff-mrr;      
+                    color:$yellow;
+                    font-size: $fsm-xl;
                 }                
             }
         }
@@ -75,6 +73,7 @@
         display: flex;
         flex-direction: column;
         width: 80%;
+        max-width: 380px;
         margin: 0 auto;
         
         input{
@@ -84,26 +83,90 @@
             border: none;
             outline: none;
             padding: 0 10px;
-            background: #F3A317;
-            color: #211768;
+            background: $yellow;
+            color: $purple;
         }
 
         button{
             border: none;
-            background: #F3A317;            
-            color: #211768;
+            background: $yellow;            
+            color: $purple;
             border-radius: 15px;
             outline: none;
             width: 50%;
             height: 35px;
             margin: 0 auto;
             margin-bottom: 6px;            
+            cursor: pointer;
         }
 
     }
+}
+
+@media screen and (min-width:750px){
+    .home{
+        background-image: url(../assets/quiz-background-tbt.jpg);        
+
+        .hero{
+            .language-select{
+                justify-content: flex-end;
+
+                a{
+                    margin-right: 40px;
+                    font-size: $fst-m;
+                }
+            }
+
+            article{
+                p{
+                    font-size: $fst-m;
+                    span{
+                        font-size: $fst-l;
+                    }
+                }
+            }
+        }
+
+        .form{
+            button{
+                font-size: $fst-s;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .home{        
+        background-image: url("../assets/quiz-background-dsk.jpg");
+        background-size:cover;
+        background-position: center;
+
+        .filter{                  
+            backdrop-filter: blur(.3rem);
+        }
+
+        .hero{
+            .language-select{
+                margin: 35px 20px 0 0;                
+            }
+
+            article{   
+                margin-left: 50px;             
+                p{
+                    text-align: left;
+                    max-width: 1000px;
+                    margin:30px 0 0 0;
+                    font-size: $fsd-m;
+                    letter-spacing: 2px;
+                    line-height:3rem;
+                    span{
+                        font-size: $fsd-xl;
+                        color: $red;
+                    }
+                }
+            }
+        }
 
 
-
-
-
+    }
 }

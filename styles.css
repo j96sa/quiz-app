@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@300;400;500;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
 .home {
-  min-height: 100vh;
   margin: 0;
   background-image: url("https://i.pinimg.com/originals/73/37/dd/7337dd152216decafff639f1761ff09e.jpg");
   background-size: cover;
@@ -10,8 +9,8 @@
 
 .home .filter {
   height: 100vh;
-  -webkit-backdrop-filter: blur(0.3rem);
-          backdrop-filter: blur(0.3rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +27,6 @@
   width: 95%;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.8rem;
   font-weight: 700;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -67,6 +65,7 @@
       -ms-grid-row-align: center;
       align-self: center;
   color: #AC0700;
+  cursor: pointer;
 }
 
 .home .hero .language-select select {
@@ -77,6 +76,7 @@
   outline: none;
   background-color: #AC0700;
   color: #fff;
+  cursor: pointer;
 }
 
 .home .hero article {
@@ -86,24 +86,20 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #C70039;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home .hero article p {
+  max-width: 681px;
   color: #211768;
   font-size: 1.3rem;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
 }
 
 .home .hero article p span {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   color: #F3A317;
   font-size: 2rem;
 }
@@ -120,6 +116,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 80%;
+  max-width: 380px;
   margin: 0 auto;
 }
 
@@ -144,12 +141,67 @@
   height: 35px;
   margin: 0 auto;
   margin-bottom: 6px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
+  .home {
+    background-image: url(../assets/quiz-background-tbt.jpg);
+  }
+  .home .hero .language-select {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .home .hero .language-select a {
+    margin-right: 40px;
+    font-size: 1.5rem;
+  }
+  .home .hero article p {
+    font-size: 1.5rem;
+  }
+  .home .hero article p span {
+    font-size: 2.3rem;
+  }
+  .home .form button {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .home {
+    background-image: url("../assets/quiz-background-dsk.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .home .filter {
+    -webkit-backdrop-filter: blur(0.3rem);
+            backdrop-filter: blur(0.3rem);
+  }
+  .home .hero .language-select {
+    margin: 35px 20px 0 0;
+  }
+  .home .hero article {
+    margin-left: 50px;
+  }
+  .home .hero article p {
+    text-align: left;
+    max-width: 1000px;
+    margin: 30px 0 0 0;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    line-height: 3rem;
+  }
+  .home .hero article p span {
+    font-size: 2.8rem;
+    color: #AC0700;
+  }
 }
 
 body, * {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

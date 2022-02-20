@@ -1,11 +1,11 @@
-import { Home } from "./components/home/home.js";
+import { Home } from "./components/home/Home.js";
 
 export default function Router(){
     const {hash} = location;
 
     switch (hash) {
         case "":
-            Home();            
+            Home();             
         break;
     
         default:

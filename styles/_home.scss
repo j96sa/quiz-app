@@ -1,10 +1,10 @@
 .home{    
     margin: 0;
     background-image: url("https://i.pinimg.com/originals/73/37/dd/7337dd152216decafff639f1761ff09e.jpg");
-    background-size:cover ;
+    background-size:cover ;    
 
     .filter{
-        height: 100vh;        
+        min-height: 100vh;        
         backdrop-filter: blur(.5rem);
         display: flex;
         flex-direction: column;
@@ -94,6 +94,7 @@
             border-radius: 15px;
             outline: none;
             width: 50%;
+            min-width: fit-content;
             height: 35px;
             margin: 0 auto;
             margin-bottom: 6px;            

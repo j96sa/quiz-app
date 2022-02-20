@@ -8,7 +8,7 @@
 }
 
 .home .filter {
-  height: 100vh;
+  min-height: 100vh;
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
   display: -webkit-box;
@@ -138,6 +138,9 @@
   border-radius: 15px;
   outline: none;
   width: 50%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   height: 35px;
   margin: 0 auto;
   margin-bottom: 6px;

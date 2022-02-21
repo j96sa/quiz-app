@@ -36,15 +36,24 @@
                 align-self: center;
                 color: $red;
                 cursor: pointer;
+
+                &:hover{
+                    color: $red-hover;
+                }
             }
 
             select{
+                border: none;
                 width: fit-content;            
                 border-radius: 15px;
                 outline: none;  
                 background-color: $red; 
                 color: $white;  
-                cursor: pointer;           
+                cursor: pointer; 
+                
+                &:hover{
+                    background: $red-hover;                    
+                }
             }            
         }
 
@@ -99,6 +108,11 @@
             margin: 0 auto;
             margin-bottom: 6px;            
             cursor: pointer;
+            
+            &:hover{
+                background: $yellow-hover;
+                color: #000;
+            }
         }
 
     }

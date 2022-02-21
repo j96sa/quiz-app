@@ -68,7 +68,12 @@
   cursor: pointer;
 }
 
+.home .hero .language-select a:hover {
+  color: #ce1800;
+}
+
 .home .hero .language-select select {
+  border: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -77,6 +82,10 @@
   background-color: #AC0700;
   color: #fff;
   cursor: pointer;
+}
+
+.home .hero .language-select select:hover {
+  background: #ce1800;
 }
 
 .home .hero article {
@@ -145,6 +154,11 @@
   margin: 0 auto;
   margin-bottom: 6px;
   cursor: pointer;
+}
+
+.home .form button:hover {
+  background: #F3A317aa;
+  color: #000;
 }
 
 @media screen and (min-width: 750px) {

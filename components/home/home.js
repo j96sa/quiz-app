@@ -4,7 +4,7 @@ import traduction from "./traduction.js";
 //
 const d = document,
 ls = localStorage,
-leaderboard = localStorage.getItem("leaderboard") || false;
+leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
 //RUTA EN LA QUE SE EJECUTAN LAS FUNCIONES(para que se ejecuten en un orden logico && asi lo tengo mas organizado y solo tengo que importar en el router un solo componente)
 export const Home = ()=>{
@@ -14,42 +14,66 @@ export const Home = ()=>{
 };
 
 
-/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
-
+//LOGICA PARA INSERTAR A LOS USUARIOS EN EL LOCALSTORAGE
 const registerUser = ()=>{
     const $inputBtnStart = d.querySelector(".form .form-button"),
+    $form = d.querySelector(".filter .form"),
     $inputBtnRepeat = d.querySelector(".form .repeat-button"),
     $inputText = d.querySelector(`.form [type="text"]`);
+    
 
+    //FUNCION PARA INSERTAR A LOS USUARIOS EN EL LOCALSTORAGE
+    const userRegister = ()=>{
+        let regexpValidation = /^[a-z\s]+$/ig.test($inputText.value);
 
-    $inputBtnStart.addEventListener("click",e=>{
-        //console.log($inputText.value);        
+        if ($inputText.value!=="" && regexpValidation){
+            const userName = $inputText.value;
 
-        const userName = $inputText.value,
-        id = Math.round(Date.now() * Math.random()) + userName;
+            let randomID = Math.round(Date.now() * Math.random()) + userName.toLowerCase();
+            randomID = Array.from(randomID);
+            randomID = randomID.filter(e=>e!==" ");
 
+            const id = randomID.join("");
 
-        const users = [
-            {
-                id,
-                name:userName,
-                general_score:0,
-                general_time_response:"",
-                questions:{
-                    q1:{time:"",score:0}
+            /* const users = [
+                {
+                    id,
+                    name:userName,
+                    general_score:0,
+                    general_time_response:"",
+                    questions:{
+                        q1:{time:"",score:0}
+                    }
                 }
-            }
-        ];
+            ]; */
+            
+            leaderboard.push(
+                {
+                    id,
+                    name:userName,
+                    general_score:0,
+                    general_time_response:"",
+                    questions:{
+                        q1:{time:"",score:0}
+                    }
+                }
+            )
+                
+            ls.setItem("leaderboard",JSON.stringify(leaderboard));
 
-        ls.setItem("leaderboard",JSON.stringify(
-            users
-        ))
+            $inputText.value = "";
+        };
+    };
 
-        $inputText.value = "";
+    //desencadenante del evento mediante click
+    $inputBtnStart.addEventListener("click",userRegister);
+    
+    //desencadenante del evento mediante Enter
+    $form.addEventListener("keydown",e=>{
+        if(e.key==="Enter") userRegister();        
     });
 };
 
-/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
 
 
 //FUNCION CON LA LOGICA DE LA TRADUCCION DEL COMPONENTE
@@ -114,8 +138,8 @@ const RenderHome = (trad)=>{
             </section>
 
             <section class="form">
-                <input type="text"/>
-                <button class="form-button">empezar</button>
+                <input required type="text"/>
+                <a><button class="form-button">empezar</button></a>
                 ${leaderboard ?`<button class="repeat-button">jugar otra vez</button>` :`<p  style="display:none"></p>`}
             </section>
         </section>

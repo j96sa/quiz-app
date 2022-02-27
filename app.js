@@ -1,4 +1,4 @@
 import Router from "./Router.js"
-import {Home} from "./components/home/home.js"
 
-Router();
+window.addEventListener("hashchange",Router);
+document.addEventListener("DOMContentLoaded",Router);

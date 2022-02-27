@@ -140,6 +140,10 @@
   color: #211768;
 }
 
+.home .form a {
+  text-align: center;
+}
+
 .home .form button {
   border: none;
   background: #F3A317;

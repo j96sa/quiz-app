@@ -4,19 +4,58 @@ import traduction from "./traduction.js";
 //
 const d = document,
 ls = localStorage,
-leaderboard = localStorage.getItem("leaderboard") || true;
+leaderboard = localStorage.getItem("leaderboard") || false;
 
 //RUTA EN LA QUE SE EJECUTAN LAS FUNCIONES(para que se ejecuten en un orden logico && asi lo tengo mas organizado y solo tengo que importar en el router un solo componente)
 export const Home = ()=>{
     RenderHome(traduction);
-    languageChange(traduction)
+    languageChange(traduction);
+    registerUser();
 };
 
 
-//FUNCION ABSTRAIDA CON LA LOGICA DE LA TRADUCCION DEL COMPONENTE
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+
+const registerUser = ()=>{
+    const $inputBtnStart = d.querySelector(".form .form-button"),
+    $inputBtnRepeat = d.querySelector(".form .repeat-button"),
+    $inputText = d.querySelector(`.form [type="text"]`);
+
+
+    $inputBtnStart.addEventListener("click",e=>{
+        //console.log($inputText.value);        
+
+        const userName = $inputText.value,
+        id = Math.round(Date.now() * Math.random()) + userName;
+
+
+        const users = [
+            {
+                id,
+                name:userName,
+                general_score:0,
+                general_time_response:"",
+                questions:{
+                    q1:{time:"",score:0}
+                }
+            }
+        ];
+
+        ls.setItem("leaderboard",JSON.stringify(
+            users
+        ))
+
+        $inputText.value = "";
+    });
+};
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  */
+
+
+//FUNCION CON LA LOGICA DE LA TRADUCCION DEL COMPONENTE
 const traductionFunction = (e,trad)=>{
     const $startButton = d.querySelector(".form .form-button"),
-    $playAgainButton = d.querySelector(".form .repeat-button"),
+    $playAgainButton = d.querySelector(".form .repeat-button") || null,
     $homeHeroTitle = d.querySelector(".hero article"),
     $languageSelector = d.querySelector(".language-select select");
     
@@ -27,19 +66,19 @@ const traductionFunction = (e,trad)=>{
         case "es":
             $homeHeroTitle.innerHTML = trad.es.title;
             $startButton.innerHTML = trad.es.buttons.start;
-            $playAgainButton.innerHTML = trad.es.buttons.repeat;
+            $playAgainButton!==null ?$playAgainButton.innerHTML = trad.es.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
         break;
         case "en":
             $homeHeroTitle.innerHTML = trad.en.title;
             $startButton.innerHTML = trad.en.buttons.start;
-            $playAgainButton.innerHTML = trad.en.buttons.repeat;            
+            $playAgainButton!==null ?$playAgainButton.innerHTML = trad.en.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
         break;
         case "it":
             $homeHeroTitle.innerHTML = trad.it.title;
             $startButton.innerHTML = trad.it.buttons.start
-            $playAgainButton.innerHTML = trad.it.buttons.repeat
+            $playAgainButton!==null ?$playAgainButton.innerHTML = trad.it.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
         break;
     };

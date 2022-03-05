@@ -140,11 +140,7 @@
   color: #211768;
 }
 
-.home .form a {
-  text-align: center;
-}
-
-.home .form button {
+.home .form input[type="submit"] {
   border: none;
   background: #F3A317;
   color: #211768;
@@ -160,7 +156,7 @@
   cursor: pointer;
 }
 
-.home .form button:hover {
+.home .form input[type="submit"]:hover {
   background: #F3A317aa;
   color: #000;
 }
@@ -184,7 +180,7 @@
   .home .hero article p span {
     font-size: 2.3rem;
   }
-  .home .form button {
+  .home .form input[type="submit"] {
     font-size: 1.1rem;
   }
 }

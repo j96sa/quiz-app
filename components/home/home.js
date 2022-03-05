@@ -23,7 +23,7 @@ const registerUser = ()=>{
     
 
     //FUNCION PARA INSERTAR A LOS USUARIOS EN EL LOCALSTORAGE
-    const userRegister = ()=>{
+    const userRegister = (e)=>{
         let regexpValidation = /^[a-z\s]+$/ig.test($inputText.value);
 
         if ($inputText.value!=="" && regexpValidation){
@@ -60,13 +60,18 @@ const registerUser = ()=>{
             )
                 
             ls.setItem("leaderboard",JSON.stringify(leaderboard));
-
             $inputText.value = "";
+            
+            //para redireccionar la pagina 
+            location.href = location.origin + `/#/q1`;
         };
     };
 
     //desencadenante del evento mediante click
-    $inputBtnStart.addEventListener("click",userRegister);
+    $inputBtnStart.addEventListener("click",e=>{
+        e.preventDefault();        
+        userRegister();
+    });
     
     //desencadenante del evento mediante Enter
     $form.addEventListener("keydown",e=>{
@@ -89,20 +94,20 @@ const traductionFunction = (e,trad)=>{
     switch (e) {
         case "es":
             $homeHeroTitle.innerHTML = trad.es.title;
-            $startButton.innerHTML = trad.es.buttons.start;
-            $playAgainButton!==null ?$playAgainButton.innerHTML = trad.es.buttons.repeat :false;
+            $startButton.value = trad.es.buttons.start;
+            $playAgainButton!==null ?$playAgainButton.value = trad.es.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
         break;
         case "en":
             $homeHeroTitle.innerHTML = trad.en.title;
-            $startButton.innerHTML = trad.en.buttons.start;
-            $playAgainButton!==null ?$playAgainButton.innerHTML = trad.en.buttons.repeat :false;
+            $startButton.value = trad.en.buttons.start;
+            $playAgainButton!==null ?$playAgainButton.value = trad.en.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
         break;
         case "it":
             $homeHeroTitle.innerHTML = trad.it.title;
-            $startButton.innerHTML = trad.it.buttons.start
-            $playAgainButton!==null ?$playAgainButton.innerHTML = trad.it.buttons.repeat :false;
+            $startButton.value = trad.it.buttons.start
+            $playAgainButton!==null ?$playAgainButton.value = trad.it.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
         break;
     };
@@ -137,14 +142,20 @@ const RenderHome = (trad)=>{
                 </article>            
             </section>
 
-            <section class="form">
+            <form class="form">
                 <input required type="text"/>
-                <a><button class="form-button">empezar</button></a>
-                ${leaderboard ?`<button class="repeat-button">jugar otra vez</button>` :`<p  style="display:none"></p>`}
-            </section>
+                <input type="submit" class="form-button" value="empezar">
+                ${leaderboard ?`<input type="submit" class="repeat-button" value="jugar otra vez">` :`<p  style="display:none"></p>`}
+            </form>
         </section>
     </div>`;
 
     // PARA QUE CADA VEZ QUE SE ACTUALICE EL COMPONENTE MANTENGA EL LENGUAGE SELECCIONADO POR EL USUARIO
     traductionFunction(ls.getItem("language"),trad);    
 };
+
+{/* <section class="form">
+                <input required type="text"/>
+                <a><button class="form-button">empezar</button></a>
+                ${leaderboard ?`<button class="repeat-button">jugar otra vez</button>` :`<p  style="display:none"></p>`}
+            </section> */}

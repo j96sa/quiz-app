@@ -96,11 +96,7 @@
             color: $purple;
         }
 
-        a{
-            text-align: center;
-        }
-
-        button{
+        input[type="submit"]{
             border: none;
             background: $yellow;            
             color: $purple;
@@ -147,7 +143,7 @@
         }
 
         .form{
-            button{
+            input[type="submit"]{
                 font-size: $fst-s;
             }
         }

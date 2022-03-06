@@ -81,7 +81,10 @@ const registerUser = ()=>{
     
     //desencadenante del evento mediante Enter
     $form.addEventListener("keydown",e=>{
-        if(e.key==="Enter") dispatchRegisterUserEvent();        
+        if(e.key==="Enter"){
+            e.preventDefault();
+            dispatchRegisterUserEvent();
+        } 
     });
 };
 

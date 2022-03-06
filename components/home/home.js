@@ -23,7 +23,7 @@ const registerUser = ()=>{
     
 
     //FUNCION PARA INSERTAR A LOS USUARIOS EN EL LOCALSTORAGE
-    const userRegister = (e)=>{
+    const dispatchRegisterUserEvent = (e)=>{
         let regexpValidation = /^[a-z\s]+$/ig.test($inputText.value);
 
         if ($inputText.value!=="" && regexpValidation){
@@ -63,19 +63,25 @@ const registerUser = ()=>{
             $inputText.value = "";
             
             //para redireccionar la pagina 
-            location.href = location.origin + `/#/q1`;
+            //location.href = location.origin + `/#/q1`;
+        }else{
+            $form.classList = "form message-on";
+            $inputText.value = "";
+            setTimeout(()=>{
+                $form.classList = "form";
+            },3000);
         };
     };
 
     //desencadenante del evento mediante click
     $inputBtnStart.addEventListener("click",e=>{
         e.preventDefault();        
-        userRegister();
+        dispatchRegisterUserEvent();
     });
     
     //desencadenante del evento mediante Enter
     $form.addEventListener("keydown",e=>{
-        if(e.key==="Enter") userRegister();        
+        if(e.key==="Enter") dispatchRegisterUserEvent();        
     });
 };
 
@@ -86,7 +92,9 @@ const traductionFunction = (e,trad)=>{
     const $startButton = d.querySelector(".form .form-button"),
     $playAgainButton = d.querySelector(".form .repeat-button") || null,
     $homeHeroTitle = d.querySelector(".hero article"),
-    $languageSelector = d.querySelector(".language-select select");
+    $languageSelector = d.querySelector(".language-select select"),
+    $inputTextPlaceholder = d.querySelector(`.form input[type="text"]`),
+    $errorInputMessage = d.querySelector(".form p");
     
     //para guardar en el localstorage el lenguaje utilizado
     ls.setItem("language",e);
@@ -96,19 +104,25 @@ const traductionFunction = (e,trad)=>{
             $homeHeroTitle.innerHTML = trad.es.title;
             $startButton.value = trad.es.buttons.start;
             $playAgainButton!==null ?$playAgainButton.value = trad.es.buttons.repeat :false;
-            $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
+            $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");            
+            $inputTextPlaceholder.placeholder = trad.es.placeholder;
+            $errorInputMessage.innerText = trad.es.error_message;
         break;
         case "en":
             $homeHeroTitle.innerHTML = trad.en.title;
             $startButton.value = trad.en.buttons.start;
             $playAgainButton!==null ?$playAgainButton.value = trad.en.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
+            $inputTextPlaceholder.placeholder = trad.en.placeholder;
+            $errorInputMessage.innerText = trad.en.error_message;
         break;
         case "it":
             $homeHeroTitle.innerHTML = trad.it.title;
             $startButton.value = trad.it.buttons.start
             $playAgainButton!==null ?$playAgainButton.value = trad.it.buttons.repeat :false;
             $languageSelector.querySelector(`option[value=${e}]`).setAttribute("selected","");
+            $inputTextPlaceholder.placeholder = trad.it.placeholder;
+            $errorInputMessage.innerText = trad.it.error_message;
         break;
     };
 }
@@ -127,8 +141,8 @@ const RenderHome = (trad)=>{
         <section class="filter"> 
 
             <section class="hero">
-                <section ${leaderboard ?`class="language-select"` :`class="language-select alone"`}>
-                ${leaderboard ?`<a class="leaderboard-button">Leaderboard</a>` :`<p  style="display:none"></p>`}
+                <section ${leaderboard.length>0 ?`class="language-select"` :`class="language-select alone"`}>
+                ${leaderboard.length>0 ?`<a class="leaderboard-button">Leaderboard</a>` :`<p  style="display:none"></p>`}
 
                     <select>                
                         <option value="es">Español</option>
@@ -143,9 +157,10 @@ const RenderHome = (trad)=>{
             </section>
 
             <form class="form">
-                <input required type="text"/>
+            <p>debe completar el campo con caracteres alfabeticos</p>
+                <input required type="text" placeholder="escribe tu nombre..."/>
                 <input type="submit" class="form-button" value="empezar">
-                ${leaderboard ?`<input type="submit" class="repeat-button" value="jugar otra vez">` :`<p  style="display:none"></p>`}
+                ${leaderboard.length>0 ?`<input type="submit" class="repeat-button" value="jugar otra vez">` :`<p  style="display:none"></p>`}
             </form>
         </section>
     </div>`;

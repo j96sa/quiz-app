@@ -35,18 +35,6 @@ const registerUser = ()=>{
 
             const id = randomID.join("");
 
-            /* const users = [
-                {
-                    id,
-                    name:userName,
-                    general_score:0,
-                    general_time_response:"",
-                    questions:{
-                        q1:{time:"",score:0}
-                    }
-                }
-            ]; */
-            
             leaderboard.push(
                 {
                     id,
@@ -54,7 +42,9 @@ const registerUser = ()=>{
                     general_score:0,
                     general_time_response:"",
                     questions:{
-                        q1:{time:"",score:0}
+                        q1:{time:"",score:0},
+                        q2:{time:"",score:0},
+                        q3:{time:"",score:0}
                     }
                 }
             )
@@ -63,7 +53,7 @@ const registerUser = ()=>{
             $inputText.value = "";
             
             //para redireccionar la pagina 
-            //location.href = location.origin + `/#/q1`;
+            location.href = location.origin + `/#/q1/lorenzo`;
         }else{
             $form.classList = "form message-on";
             $inputText.value = "";
@@ -171,9 +161,3 @@ const RenderHome = (trad)=>{
     // PARA QUE CADA VEZ QUE SE ACTUALICE EL COMPONENTE MANTENGA EL LENGUAGE SELECCIONADO POR EL USUARIO
     traductionFunction(ls.getItem("language"),trad);    
 };
-
-{/* <section class="form">
-                <input required type="text"/>
-                <a><button class="form-button">empezar</button></a>
-                ${leaderboard ?`<button class="repeat-button">jugar otra vez</button>` :`<p  style="display:none"></p>`}
-            </section> */}

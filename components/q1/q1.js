@@ -10,21 +10,22 @@ export const q1 = ()=>{
 const change = ()=>{
     d.addEventListener("click",e=>{
         if(e.target === d.querySelector(".btn")){
-            const userInfo = JSON.parse(localStorage.getItem("leaderboard"));
-            /* $time = d.querySelector(".form .time").value,
-            $score = d.querySelector(".form .score").value;            
+            const userArray = JSON.parse(localStorage.getItem("leaderboard")),
+            
+            userID = (location.hash).substring(5),
+            $time = d.querySelector(".form .time").value,
+            $score = d.querySelector(".form .score").value;
 
-            userInfo.questions.q1.time = $time;
-            userInfo.questions.q1.score = $score;
-
-            console.log(userInfo); */
-
-            /* ******* */
-            /* userInfo.forEach(e=>{
-                e.name === "josue" ?console.log(e) :null;
-            }); */
-
-            console.log(location);
+            console.log(userArray);
+            userArray.forEach(user=>{
+                if(user.id === userID){
+                    
+                    user.questions.q1.score = $score;
+                    user.questions.q1.time = $time;
+                    
+                    localStorage.setItem("leaderboard",JSON.stringify(userArray));
+                };
+            });
         };
     });
 };
@@ -35,8 +36,8 @@ const RenderQ1 = (value)=>{
         <h1>Q1</h1>
     
         <form class="form">
-            <input class="time" type="text">
-            <input class="score" type="number">
+            <input class="time" type="text" placeholder="time...">
+            <input class="score" type="number" placeholder="score...">
             <button>send</button>
         </form>
     

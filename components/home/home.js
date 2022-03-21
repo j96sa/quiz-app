@@ -53,11 +53,11 @@ const registerUser = ()=>{
             $inputText.value = "";
             
             //para redireccionar la pagina 
-            location.href = location.origin + `/#/q1/lorenzo`;
+            location.href = location.origin + `/#/q1/${id}`;
         }else{
             $form.classList = "form message-on";
             $inputText.value = "";
-            setTimeout(()=>{
+            setTimeout(()=>{    
                 $form.classList = "form";
             },3000);
         };

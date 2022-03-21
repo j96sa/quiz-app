@@ -1,23 +1,24 @@
 import { Home } from "./components/home/Home.js";
 import { q1 } from "./components/q1/Q1.js";
 
-const paramRegExp = "lol";
-let text = "#/q1/00410josue";
-let string = (location.hash).substring(2);
-
-console.log(string);
-
 export default function Router(){
     const {hash} = location;
 
-    switch (hash) {
+    if(hash === ""){
+        return Home();
+    }else if(/^#\/q1\/[a-z0-9]+$/g.test(hash)){
+        return q1();
+    }else{
+        console.log("CRITICAL ERR");
+    }
+
+    /* switch (hash) {
         case "":
             Home();             
         break;
     
-        case paramRegExp.test(hash):
-            console.log("regExp");
+        case /^#\/q1\/[a-z0-9]+$/g.test(hash):            
             q1();             
         break;
-    }
+    }; */
 };

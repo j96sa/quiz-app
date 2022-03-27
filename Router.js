@@ -1,5 +1,6 @@
 import { Home } from "./components/home/Home.js";
-import { q1 } from "./components/q1/Q1.js";
+import { Leaderboard } from "./components/leaderboard/Leaderboard.js";
+import { Q1 } from "./components/q1/Q1.js";
 
 export default function Router(){
     const {hash} = location;
@@ -7,7 +8,9 @@ export default function Router(){
     if(hash === ""){
         return Home();
     }else if(/^#\/q1\/[a-z0-9]+$/g.test(hash)){
-        return q1();
+        return Q1();
+    }else if(hash === "#/leaderboard"){
+        Leaderboard();
     }else{
         console.log("CRITICAL ERR");
     }

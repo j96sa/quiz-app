@@ -11,7 +11,18 @@ export const Home = ()=>{
     RenderHome(traduction);
     languageChange(traduction);
     registerUser();
+    leaderboard.length>0 ?playAgain() :null;
 };
+
+/* ************************************************************ */
+const playAgain = ()=>{
+    const $playButton = d.querySelector(".form .repeat-button");
+
+    $playButton.addEventListener("click",e=>{
+        location.href = `#/leaderboard`;
+    });
+};
+/* ************************************************************ */
 
 
 //LOGICA PARA INSERTAR A LOS USUARIOS EN EL LOCALSTORAGE
@@ -53,7 +64,7 @@ const registerUser = ()=>{
             $inputText.value = "";
             
             //para redireccionar la pagina 
-            location.href = location.origin + `/#/q1/${id}`;
+            location.href = `#/q1/${id}`;
         }else{
             $form.classList = "form message-on";
             $inputText.value = "";

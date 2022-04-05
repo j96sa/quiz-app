@@ -225,9 +225,140 @@
     line-height: 3rem;
   }
   .home .hero article p span {
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: #AC0700;
   }
+}
+
+.q1 {
+  background-image: url("../assets/q1_mobile_wp4.jpg");
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.q1 .filter {
+  position: relative;
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.q1 .hero {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 350px;
+}
+
+.q1 .hero h2 {
+  font-size: 1.3rem;
+}
+
+.q1 .hero .book-title {
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #F3A317;
+  font-family: "Merriweather", serif;
+}
+
+.q1 .writers {
+  max-width: 260px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.q1 .writers li {
+  border: 2px solid #F3A317;
+  border-radius: 20px;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+.q1 .writers li:hover {
+  background-color: #F3A317;
+  color: #000;
+}
+
+@media screen and (min-width: 450px) {
+  .q1 .filter {
+    -webkit-backdrop-filter: blur(0.5rem);
+            backdrop-filter: blur(0.5rem);
+  }
+  .q1 .hero {
+    max-width: none;
+  }
+  .q1 .hero h2 {
+    font-size: 1.5rem;
+  }
+  .q1 .hero .book-title {
+    font-size: 2.3rem;
+  }
+  .q1 .writers {
+    max-width: 420px;
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .q1 .hero {
+    max-width: none;
+  }
+  .q1 .hero h2 {
+    font-size: 2.3rem;
+  }
+  .q1 .hero .book-title {
+    font-size: 3rem;
+  }
+  .q1 .writers {
+    max-width: 420px;
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+  }
+}
+
+.clock {
+  background: #0c4;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.clock.orange {
+  background-color: #e60;
+}
+
+.clock.red {
+  background-color: #AC0700;
+}
+
+@media screen and (min-width: 750px) {
+  .clock p {
+    font-size: 1.5rem;
+  }
+}
+
+.emergent-card {
+  background: rgba(102, 102, 102, 0.2);
+  -webkit-backdrop-filter: blur(1.8rem);
+          backdrop-filter: blur(1.8rem);
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 body, * {

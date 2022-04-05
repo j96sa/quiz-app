@@ -7,10 +7,12 @@ export default function Router(){
 
     if(hash === ""){
         return Home();
-    }else if(/^#\/q1\/[a-z0-9]+$/g.test(hash)){
-        return Q1();
     }else if(hash === "#/leaderboard"){
         Leaderboard();
+    }else if(/^#\/q1\/[a-z0-9]+$/g.test(hash)){
+        return Q1();
+    }else if(/^#\/q2\/[a-z0-9]+$/g.test(hash)){
+        return document.getElementById("root").innerHTML = "QUESTION #2";
     }else{
         console.log("CRITICAL ERR");
     }

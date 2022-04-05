@@ -1,0 +1,100 @@
+.q1{    
+    background-image: url("../assets/q1_mobile_wp4.jpg");
+    background-size: cover;
+    color: $white;
+    min-height: 100vh;
+    
+    .filter{
+        //para poder posicionar la tarjeta emergente dentro del componente
+        position: relative;
+        //
+        backdrop-filter: blur(.3rem);
+        min-height: 100vh;        
+        display: flex;
+        flex-direction: column;        
+        justify-content: space-between;
+    }
+
+    .hero{
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 350px;
+
+        h2{
+            font-size: $fsm-m;
+        }
+        .book-title{
+            margin-top: 20px;            
+            font-size: $fsm-xl;
+            color: $yellow;
+            font-family: $ff-mrr;
+        }
+    }
+    
+    .writers{
+        max-width: 260px;
+        padding: 0;
+        list-style: none;
+        //font-size: $fsm-m;
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+
+        li{            
+            border: 2px solid $yellow;
+            border-radius: 20px;
+            margin:25px 0;
+            cursor: pointer;
+            &:hover{
+                background-color: $yellow;
+                color: #000;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width:450px){
+    .q1{
+        .filter{
+            backdrop-filter: blur(.5rem);
+        }
+
+        .hero{
+            max-width: none;
+            h2{
+                font-size: $fst-m;
+            }
+            .book-title{
+                font-size: $fst-l;
+            }
+        }
+
+        .writers{
+            max-width: 420px;
+            font-size: $fst-m ;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width:1100px){
+    .q1{
+        .hero{
+            max-width: none;
+            h2{
+                font-size: $fst-l;
+            }
+            .book-title{
+                font-size: $fsd-xl;
+            }
+        }
+
+        .writers{
+            max-width: 420px;
+            font-size: $fsd-m ;
+            padding-bottom: 20px;
+        }
+    }
+}

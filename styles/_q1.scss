@@ -3,11 +3,11 @@
     background-size: cover;
     color: $white;
     min-height: 100vh;
+    //para poder posicionar la tarjeta emergente dentro del componente
+    position: relative;
+    //
     
     .filter{
-        //para poder posicionar la tarjeta emergente dentro del componente
-        position: relative;
-        //
         backdrop-filter: blur(.3rem);
         min-height: 100vh;        
         display: flex;

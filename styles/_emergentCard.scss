@@ -3,6 +3,186 @@
     backdrop-filter: blur(1.8rem);
     position: absolute;
     height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
+    transform: translatey(-100%);
+    transition: .4s ease-out;
+
+    text-align: center;
+    padding-top: 100px;
+
+
+    .card-hero{
+        color: $green-light;
+        font-family: $ff-mrr;
+        font-size: $fsm-xl;
+        margin-bottom: 25px;
+    }
+
+    .rank-score{
+        p{
+            font-size: $fsm-m;
+            color: $green-light;
+            &.score-0{
+                color: $red;    
+            }
+        }
+    }
+
+    .card-time{
+        margin-top: 25px;
+        
+        .time-subtitle{
+            color: $green-light;
+            font-size: $fsm-m;
+            &.score-0{
+                color: $red;
+            }
+        }
+    }
+
+    .card-buttons{        
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 80px auto 0 auto;
+        max-width: 370px;
+        
+        button{
+            margin-bottom: 20px;            
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            font-size: $fsm-m;
+            background: transparent;
+            color: $white;
+            border: 1px solid $yellow;
+            cursor: pointer;
+            &:hover{
+                background:$yellow;
+            }
+        }
+        
+        .btn-exit{
+            color:$red;
+        }
+        .btn-next{
+            color:$green-light;
+        }
+    }
+
+    &.active{
+        transform: translatey(0);
+    }
+    
+    &.score-5{
+        .stars{
+            .fa{
+                color: $yellow;
+            }
+        }
+    }
+    &.score-4{
+        .stars{
+            .fa{
+                color: $yellow;
+            }
+            .fa:last-child{
+                color: $white;
+            }
+        }
+    }
+    &.score-3{
+        .stars{
+            .fa{
+                color: $yellow;
+            }
+            .fa:nth-child(5),.fa:nth-child(4){
+                color: $white;
+            }
+        }
+    }
+    &.score-2{
+        .stars{
+            .fa{
+                color: $white;
+            }
+            .fa:nth-child(1),.fa:nth-child(2){
+                color: $yellow;
+            }
+        }
+    }
+    &.score-1{
+        .stars{
+            .fa{
+                color: $white;
+            }
+            .fa:first-child{
+                color: $yellow;
+            }
+        }
+    }
+    &.score-0{  
+        .card-hero{
+            color: $red;
+        }
+        .stars{
+            .fa{
+                color: $white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:750px) {
+    .emergent-card{
+        .card-hero{
+            font-size: $fst-l;
+        }
+        
+        .rank-score{
+            p{
+                font-size: $fst-m;
+            }
+        }
+
+        .card-time{
+            .time-subtitle{
+                font-size: $fst-m;
+            }
+        }
+
+        .card-buttons{
+            button{
+                font-size: $fst-m;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .emergent-card{
+        .card-hero{
+            font-size: $fsd-xl;
+        }
+        
+        .rank-score{
+            p{
+                font-size: $fsd-m;
+            }
+        }
+
+        .card-time{
+            .time-subtitle{
+                font-size: $fsd-m;
+            }
+        }
+
+        .card-buttons{
+            button{
+                font-size: $fsd-m;
+            }
+        }
+    }
 }

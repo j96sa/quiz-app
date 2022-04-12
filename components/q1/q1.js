@@ -42,22 +42,20 @@ const questionValidation = (bookIndex)=>{
                 score = 4;
             }else if(finalTime < 51){
                 score = 3;
-            }else if(finalTime < 81){
-                score = 2;
             }else{
-                score = 1;
+                score = 2;
             };
+
+            console.log(`score:${score},time:${finalTime}`);
             
             if(e.target.dataset.response === BooksArr[bookIndex].book){
-                userInfoMod(finalTime,score)
+                userInfoMod(finalTime,score);                
                 EmergentCard("respuesta correcta",finalTime,score);
             }else{
                 userInfoMod(0,0);
-                EmergentCard("respuesta incorrecta",finalTime,score);
+                EmergentCard("respuesta incorrecta",finalTime,0);
             };
         };
-
-
 
         /* if(e.target.matches("li") && e.target.dataset.response === BooksArr[bookIndex].book){
             
@@ -87,9 +85,7 @@ const questionValidation = (bookIndex)=>{
 
 
 //COSNTANTE PARA MODIFICAR LA INFORMACION DEL USUARIO
-const userInfoMod = (time,score)=>{        
-    console.log(time);
-    console.log(score)
+const userInfoMod = (time,score)=>{                
     
     const userArray = JSON.parse(localStorage.getItem("leaderboard"));
     

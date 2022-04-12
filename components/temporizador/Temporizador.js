@@ -19,12 +19,12 @@ export const Temporizador = (time)=>{
             d.querySelector(".clock").className = "clock orange";
         };
 
-        /* if (d.querySelector(".card .emergent-card")){
+        if (d.querySelector(".card .emergent-card")){
             clearInterval(clockInterval);            
         }else if(staticTime<0){
             clearInterval(clockInterval);  
-            EmergentCard("TIME OVER")
-        }; */
+            EmergentCard("TIME OVER",0,0);
+        };
 
     }, 1000);
 };

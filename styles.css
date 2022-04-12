@@ -235,10 +235,10 @@
   background-size: cover;
   color: #fff;
   min-height: 100vh;
+  position: relative;
 }
 
 .q1 .filter {
-  position: relative;
   -webkit-backdrop-filter: blur(0.3rem);
           backdrop-filter: blur(0.3rem);
   min-height: 100vh;
@@ -357,8 +357,160 @@
           backdrop-filter: blur(1.8rem);
   position: absolute;
   height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
+  -webkit-transform: translatey(-100%);
+          transform: translatey(-100%);
+  -webkit-transition: .4s ease-out;
+  transition: .4s ease-out;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.emergent-card .card-hero {
+  color: #0c4;
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.emergent-card .rank-score p {
+  font-size: 1.3rem;
+  color: #0c4;
+}
+
+.emergent-card .rank-score p.score-0 {
+  color: #AC0700;
+}
+
+.emergent-card .card-time {
+  margin-top: 25px;
+}
+
+.emergent-card .card-time .time-subtitle {
+  color: #0c4;
+  font-size: 1.3rem;
+}
+
+.emergent-card .card-time .time-subtitle.score-0 {
+  color: #AC0700;
+}
+
+.emergent-card .card-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  margin: 80px auto 0 auto;
+  max-width: 370px;
+}
+
+.emergent-card .card-buttons button {
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  font-size: 1.3rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #F3A317;
+  cursor: pointer;
+}
+
+.emergent-card .card-buttons button:hover {
+  background: #F3A317;
+}
+
+.emergent-card .card-buttons .btn-exit {
+  color: #AC0700;
+}
+
+.emergent-card .card-buttons .btn-next {
+  color: #0c4;
+}
+
+.emergent-card.active {
+  -webkit-transform: translatey(0);
+          transform: translatey(0);
+}
+
+.emergent-card.score-5 .stars .fa {
+  color: #F3A317;
+}
+
+.emergent-card.score-4 .stars .fa {
+  color: #F3A317;
+}
+
+.emergent-card.score-4 .stars .fa:last-child {
+  color: #fff;
+}
+
+.emergent-card.score-3 .stars .fa {
+  color: #F3A317;
+}
+
+.emergent-card.score-3 .stars .fa:nth-child(5), .emergent-card.score-3 .stars .fa:nth-child(4) {
+  color: #fff;
+}
+
+.emergent-card.score-2 .stars .fa {
+  color: #fff;
+}
+
+.emergent-card.score-2 .stars .fa:nth-child(1), .emergent-card.score-2 .stars .fa:nth-child(2) {
+  color: #F3A317;
+}
+
+.emergent-card.score-1 .stars .fa {
+  color: #fff;
+}
+
+.emergent-card.score-1 .stars .fa:first-child {
+  color: #F3A317;
+}
+
+.emergent-card.score-0 .card-hero {
+  color: #AC0700;
+}
+
+.emergent-card.score-0 .stars .fa {
+  color: #fff;
+}
+
+@media screen and (min-width: 750px) {
+  .emergent-card .card-hero {
+    font-size: 2.3rem;
+  }
+  .emergent-card .rank-score p {
+    font-size: 1.5rem;
+  }
+  .emergent-card .card-time .time-subtitle {
+    font-size: 1.5rem;
+  }
+  .emergent-card .card-buttons button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .emergent-card .card-hero {
+    font-size: 3rem;
+  }
+  .emergent-card .rank-score p {
+    font-size: 1.8rem;
+  }
+  .emergent-card .card-time .time-subtitle {
+    font-size: 1.8rem;
+  }
+  .emergent-card .card-buttons button {
+    font-size: 1.8rem;
+  }
 }
 
 body, * {

@@ -1,5 +1,7 @@
+import { userInfoMod } from "../../helper/userInfoMod.js";
 import { EmergentCard } from "../emergentCard/EmergentCard.js";
 import { Temporizador } from "../temporizador/Temporizador.js";
+import q1Traduction from "./q1Traduction.js";
 
 
 const d = document;
@@ -22,10 +24,14 @@ const startTime = Date.now();
 let score = 0;
 
 /* * * * CONSTANTE PARA EXPORTAR EL COMPONENTE * * * */
-export const Q1 = ()=>{
-    RenderQ1(BOOK_INDEX);
+export const Q1 = ()=>{ 
+    const LANGUAGE = localStorage.getItem("language");   
+    RenderQ1(BOOK_INDEX,LANGUAGE);
+    /* **********************               ****************************** */
+    //traductionFunction(localStorage.getItem("language"));
+    /* **********************               ****************************** */
     questionValidation(BOOK_INDEX);
-    Temporizador(60000);
+    Temporizador(660000);
 };
 
 /* CONSTANTE PARA SABER SI SE HA SELECCIONADO LA RESPUESTA CORRECTA
@@ -52,40 +58,36 @@ const questionValidation = (bookIndex)=>{
                 userInfoMod(finalTime,score);                
                 EmergentCard("respuesta correcta",finalTime,score);
             }else{
-                userInfoMod(0,0);
+                userInfoMod(finalTime,0);
                 EmergentCard("respuesta incorrecta",finalTime,0);
             };
         };
-
-        /* if(e.target.matches("li") && e.target.dataset.response === BooksArr[bookIndex].book){
-            
-            //para saber cuanto tiempo ha transcurrido desde que inicio el test hasta que ha sido respondido
-            const finalTime = Math.round((Date.now() - startTime)/1000);
-            
-            if(finalTime < 11){
-                score = 5;
-            }else if(finalTime < 31){
-                score = 4;
-            }else if(finalTime < 51){
-                score = 3;
-            }else if(finalTime < 81){
-                score = 2;
-            }else{
-                score = 1;
-            }
-
-            userInfoMod(finalTime,score)
-            EmergentCard("respuesta correcta",finalTime,score);
-        }else if(e.target.matches("li") && e.target.dataset.response !== BooksArr[bookIndex].book){
-            userInfoMod(0,0);
-            EmergentCard("respuesta incorrecta",finalTime,score);
-        }; */
     });
 };  
 
+//CONSTANTE PARA EJECUTAR LA TRADUCION DEL COMPONENTE
+/* const traductionFunction = (lan)=>{
+    const $heroTitle = d.querySelector(".hero .hero-title");
+    console.log(lan);
+
+    switch (lan) {
+        case "es":
+            $heroTitle.innerHTML = q1Traduction.es.h2;
+        break;
+
+        case "en":
+            $heroTitle.innerHTML = q1Traduction.en.h2;
+        break;
+
+        case "it":
+            $heroTitle.innerHTML = q1Traduction.it.h2;
+        break;
+    }
+}; */
+
 
 //COSNTANTE PARA MODIFICAR LA INFORMACION DEL USUARIO
-const userInfoMod = (time,score)=>{                
+/* const userInfoMod = (time,score)=>{                
     
     const userArray = JSON.parse(localStorage.getItem("leaderboard"));
     
@@ -101,19 +103,19 @@ const userInfoMod = (time,score)=>{
         };
     });
         
-};
+}; */
 
 
-
+//<h2>Cual de los siguientes escritores es el autor del libro:</h2>
 /* RENDERIZADO DEL COMPONENTE */
-const RenderQ1 = (bookIndex)=>{
+const RenderQ1 = (bookIndex,lan)=>{
     d.getElementById("root").innerHTML = `
     <div class="q1">
         <div class="filter">
             <div class="clock"></div>    
-        
-            <article class="hero">
-                <h2>Cual de los siguientes escritores es el autor del libro:</h2>
+
+            <article class="hero">  
+                <h1>${q1Traduction[lan].h2}</h1>                          
                 <h2 class="book-title">"${BooksArr[bookIndex].book}"</h2>
             </article>
 

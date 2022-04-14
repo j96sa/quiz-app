@@ -1,3 +1,4 @@
+import { userInfoMod } from "../../helper/userInfoMod.js";
 import { EmergentCard } from "../emergentCard/EmergentCard.js";
 const d = document;
 
@@ -9,9 +10,16 @@ export const Temporizador = (time)=>{
                 
         let min = Math.floor(staticTime%(1000*60*60)/(1000*60)),
         sec = Math.floor(staticTime%(1000*60)/1000);
+        
+        if (d.querySelector(".clock")){
+            d.querySelector(".clock").innerHTML = `<p>0${min}:${(sec<10) ?`0${sec}` :sec}</p>`
+            staticTime = staticTime - 1000;
+        }else{
+            clearInterval(clockInterval);
+        }
 
-        d.querySelector(".clock").innerHTML = `<p>0${min}:${(sec<10) ?`0${sec}` :sec}</p>`
-        staticTime = staticTime - 1000;
+        /* d.querySelector(".clock").innerHTML = `<p>0${min}:${(sec<10) ?`0${sec}` :sec}</p>`
+        staticTime = staticTime - 1000; */
 
         if(staticTime<15000){
             d.querySelector(".clock").className = "clock red";
@@ -20,10 +28,11 @@ export const Temporizador = (time)=>{
         };
 
         if (d.querySelector(".card .emergent-card")){
-            clearInterval(clockInterval);            
+            clearInterval(clockInterval);
         }else if(staticTime<0){
             clearInterval(clockInterval);  
             EmergentCard("TIME OVER",0,0);
+            userInfoMod(0,0);
         };
 
     }, 1000);

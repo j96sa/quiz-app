@@ -1,11 +1,11 @@
 const d = document;
 
 export const EmergentCard = (text,time,score)=>{
-    d.querySelector(".card").innerHTML = EmergentCardRenderComponent(text,time,score);
+    d.querySelector(".card").innerHTML = EmergentCardRenderComponent(text,time,score);    
     ComponentLogic(time);
 };
 
-const EmergentCardRenderComponent = (text,time,score)=>{
+const EmergentCardRenderComponent = (text,score)=>{    
     return `
         <div class="emergent-card score-${score}">            
             <h1 class="card-hero">${text}</h1>

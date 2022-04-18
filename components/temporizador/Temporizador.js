@@ -1,8 +1,9 @@
 import { userInfoMod } from "../../helper/userInfoMod.js";
 import { EmergentCard } from "../emergentCard/EmergentCard.js";
+import emergentCardTraduction from "../emergentCard/emergentCardTraduction.js";
 const d = document;
 
-export const Temporizador = (time)=>{
+export const Temporizador = (time,lan)=>{
     let staticTime = time,  
     clockInterval;
     
@@ -31,8 +32,9 @@ export const Temporizador = (time)=>{
             clearInterval(clockInterval);
         }else if(staticTime<0){
             clearInterval(clockInterval);  
-            EmergentCard("TIME OVER",0,0);
+            EmergentCard(0,0);
             userInfoMod(0,0);
+            d.querySelector(".emergent-card .card-hero").innerHTML = emergentCardTraduction[lan].hero_title_timeover;
         };
 
     }, 1000);

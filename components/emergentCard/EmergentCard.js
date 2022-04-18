@@ -1,17 +1,20 @@
 const d = document;
+import emergentCardTraduction from "./emergentCardTraduction.js";
 
-export const EmergentCard = (text,time,score)=>{
-    d.querySelector(".card").innerHTML = EmergentCardRenderComponent(text,time,score);    
+export const EmergentCard = (time,score)=>{
+    const LANGUAGE = localStorage.getItem("language");
+    d.querySelector(".card").innerHTML = EmergentCardRenderComponent(score,LANGUAGE);
     ComponentLogic(time);
 };
 
-const EmergentCardRenderComponent = (text,score)=>{    
+const EmergentCardRenderComponent = (score,lan)=>{    
+    console.log(emergentCardTraduction[lan].score);
     return `
         <div class="emergent-card score-${score}">            
-            <h1 class="card-hero">${text}</h1>
+            <h1 class="card-hero">${score!==0 ?emergentCardTraduction[lan].hero_title_ok :emergentCardTraduction[lan].hero_title_err}</h1>
             
             <section class="rank-score">
-                <p  class="score-${score}">score</p>
+                <p  class="score-${score}">${emergentCardTraduction[lan].score}</p>
                 <div class="stars">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -22,13 +25,13 @@ const EmergentCardRenderComponent = (text,score)=>{
             </section>
             
             <section class="card-time">
-                <p class="time-subtitle  score-${score}">time to response</p>
+                <p class="time-subtitle  score-${score}">${emergentCardTraduction[lan].time}</p>
                 <p class="time"></p>
             </section>
             
             <section class="card-buttons score-${score}">
-                <button class="btn-exit">salir</button>
-                <button class="btn-next">continuar</button>
+                <button class="btn-exit">${emergentCardTraduction[lan].exit}</button>
+                <button class="btn-next">${emergentCardTraduction[lan].next}</button>
             </section>
         </div>
     `;    

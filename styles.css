@@ -490,7 +490,7 @@
   .emergent-card .rank-score p {
     font-size: 1.5rem;
   }
-  .emergent-card .card-time .time-subtitle {
+  .emergent-card .card-time {
     font-size: 1.5rem;
   }
   .emergent-card .card-buttons button {
@@ -505,7 +505,7 @@
   .emergent-card .rank-score p {
     font-size: 1.8rem;
   }
-  .emergent-card .card-time .time-subtitle {
+  .emergent-card .card-time {
     font-size: 1.8rem;
   }
   .emergent-card .card-buttons button {

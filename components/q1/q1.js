@@ -23,13 +23,13 @@ const BooksArr = [
     {book:{
         es:"Resplandor",
         en:"Shining",
-        it:"Brillante"
+        it:"Shining"
     }},
 
     {book:{
         es:"Don Quijote de la Mancha",
-        en:"Don Quixote form The Mancha",
-        it:"Il Quixote di Mancha"
+        en:"Don Quixote",
+        it:"Don Chisciotte della Mancia"
     }},
 
     {book:{

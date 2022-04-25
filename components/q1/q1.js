@@ -43,13 +43,9 @@ const BooksArr = [
 const BOOK_INDEX = Math.floor(Math.random()*BooksArr.length);
 
 
-//VARIABLES CON LOS DATOS PARA MODIFICAR LA INFORMACION DEL USUARIO
-let startTime,
-score = 0;
-
 /* * * * CONSTANTE PARA EXPORTAR EL COMPONENTE * * * */
 export const Q1 = ()=>{     
-    const LANGUAGE = localStorage.getItem("language");   
+    const LANGUAGE = localStorage.getItem("language");
     RenderQ1(BOOK_INDEX,LANGUAGE);    
     questionValidation(BOOK_INDEX,LANGUAGE);    
     Temporizador(60000,LANGUAGE);
@@ -58,7 +54,8 @@ export const Q1 = ()=>{
 /* CONSTANTE PARA SABER SI SE HA SELECCIONADO LA RESPUESTA CORRECTA
 Y TODA LA LOGICA DEL QUEST DEL COMPONENTE */
 const questionValidation = (bookIndex,lan)=>{
-    startTime = Date.now();
+    const startTime = Date.now();
+    let score = 0;
 
     d.addEventListener("click",e=>{
         if(e.target.matches(".writers li")){            

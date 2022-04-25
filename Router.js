@@ -16,14 +16,4 @@ export default function Router(){
     }else{
         console.log("CRITICAL ERR");
     }
-
-    /* switch (hash) {
-        case "":
-            Home();             
-        break;
-    
-        case /^#\/q1\/[a-z0-9]+$/g.test(hash):            
-            q1();             
-        break;
-    }; */
 };

@@ -44,8 +44,8 @@ const BOOK_INDEX = Math.floor(Math.random()*BooksArr.length);
 
 
 //VARIABLES CON LOS DATOS PARA MODIFICAR LA INFORMACION DEL USUARIO
-const startTime = Date.now();
-let score = 0;
+let startTime,
+score = 0;
 
 /* * * * CONSTANTE PARA EXPORTAR EL COMPONENTE * * * */
 export const Q1 = ()=>{     
@@ -58,6 +58,7 @@ export const Q1 = ()=>{
 /* CONSTANTE PARA SABER SI SE HA SELECCIONADO LA RESPUESTA CORRECTA
 Y TODA LA LOGICA DEL QUEST DEL COMPONENTE */
 const questionValidation = (bookIndex,lan)=>{
+    startTime = Date.now();
 
     d.addEventListener("click",e=>{
         if(e.target.matches(".writers li")){            

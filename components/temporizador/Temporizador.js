@@ -18,9 +18,7 @@ export const Temporizador = (time,lan)=>{
         }else{
             clearInterval(clockInterval);
         }
-
-        /* d.querySelector(".clock").innerHTML = `<p>0${min}:${(sec<10) ?`0${sec}` :sec}</p>`
-        staticTime = staticTime - 1000; */
+        
 
         if(staticTime<15000){
             d.querySelector(".clock").className = "clock red";

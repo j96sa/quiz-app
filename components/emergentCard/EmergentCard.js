@@ -8,7 +8,6 @@ export const EmergentCard = (time,score)=>{
 };
 
 const EmergentCardRenderComponent = (score,lan)=>{    
-    console.log(emergentCardTraduction[lan].score);
     return `
         <div class="emergent-card score-${score}">            
             <h1 class="card-hero">${score!==0 ?emergentCardTraduction[lan].hero_title_ok :emergentCardTraduction[lan].hero_title_err}</h1>
@@ -61,14 +60,10 @@ const ComponentLogic = (time)=>{
     d.addEventListener("click",e=>{
         e.stopImmediatePropagation();
         
-        if(e.target === $exit){
-            console.log("EXIT");
+        if(e.target === $exit){            
             location.href = ``;            
-        }else if(e.target === $next){
-            console.log("next");
-            console.log(parseInt(location.hash[3]));
+        }else if(e.target === $next){            
             location.href = `#/q${parseInt(location.hash[3])+1}/${location.hash.substring(5)}`;
         };
-
     });
 };

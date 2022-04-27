@@ -26,11 +26,15 @@ const SCIENZIATI_INDEX = Math.floor(ScienziatiArr.length*Math.random());
 
 
 const questionValidation = ()=>{
+    console.log("question validation");
+    const $liElements = d.querySelectorAll(".descubrimientos li");
+
     const startTime = Date.now();
     let score = 0;
 
-    d.addEventListener("click",e=>{
-        if(e.target.matches(".descubrimientos li")){
+
+    $liElements.forEach(li=>{
+        li.addEventListener("click",e=>{
             const finalTime = Math.round((Date.now() - startTime)/1000);
         
             if(finalTime < 11){
@@ -44,12 +48,23 @@ const questionValidation = ()=>{
             };
 
             if (e.target.dataset.response === ScienziatiArr[SCIENZIATI_INDEX]) {
-                userInfoMod
+                console.log("true");
+                userInfoMod(finalTime,score);
             }else{
                 console.log("false");
-            }
-        };
+                userInfoMod(finalTime,0);
+            }        
+        });
     });
+
+
+    /* d.addEventListener("click",e=>{
+        console.log("e.target");
+        console.log(e.target);
+        if(e.target.matches(".descubrimientos li")){
+            
+        };
+    }); */
 };
 
 const RenderQ2 = (lan)=>{

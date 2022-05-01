@@ -57,7 +57,9 @@ const ComponentLogic = (time)=>{
     }, 200);
 
     //para redirigir la pagina despues de hacer click en una de las opciones del EMERGENT-CARD
-    d.addEventListener("click",e=>{
+    $exit.addEventListener("click",e=>location.href=``);
+    $next.addEventListener("click",e=>location.href = `#/q${parseInt(location.hash[3])+1}/${location.hash.substring(5)}`);
+    /* d.addEventListener("click",e=>{
         e.stopImmediatePropagation();
         
         if(e.target === $exit){            
@@ -65,5 +67,5 @@ const ComponentLogic = (time)=>{
         }else if(e.target === $next){            
             location.href = `#/q${parseInt(location.hash[3])+1}/${location.hash.substring(5)}`;
         };
-    });
+    }); */
 };

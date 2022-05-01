@@ -1,4 +1,5 @@
 import { userInfoMod } from "../../helper/userInfoMod.js";
+import { EmergentCard } from "../emergentCard/EmergentCard.js";
 import { Temporizador } from "../temporizador/Temporizador.js";
 import q2Traduction from "./q2Traduction.js";
 
@@ -25,9 +26,8 @@ const ScienziatiArr = [
 const SCIENZIATI_INDEX = Math.floor(ScienziatiArr.length*Math.random());
 
 
-const questionValidation = ()=>{
-    console.log("question validation");
-    const $liElements = d.querySelectorAll(".descubrimientos li");
+const questionValidation = ()=>{    
+    const $liElements = d.querySelectorAll(".discoveries li");
 
     const startTime = Date.now();
     let score = 0;
@@ -37,34 +37,27 @@ const questionValidation = ()=>{
         li.addEventListener("click",e=>{
             const finalTime = Math.round((Date.now() - startTime)/1000);
         
-            if(finalTime < 11){
+            if(finalTime < 16){
                 score = 5;
-            }else if(finalTime < 31){
+            }else if(finalTime < 36){
                 score = 4;
             }else if(finalTime < 51){
                 score = 3;
-            }else{
+            }else if(finalTime < 71){
                 score = 2;
+            }else{
+                score = 1;
             };
 
-            if (e.target.dataset.response === ScienziatiArr[SCIENZIATI_INDEX]) {
-                console.log("true");
+            if (e.target.dataset.response === ScienziatiArr[SCIENZIATI_INDEX]) {                
                 userInfoMod(finalTime,score);
-            }else{
-                console.log("false");
+                EmergentCard(finalTime,score);
+            }else{                
                 userInfoMod(finalTime,0);
-            }        
+                EmergentCard(finalTime,0);
+            };
         });
     });
-
-
-    /* d.addEventListener("click",e=>{
-        console.log("e.target");
-        console.log(e.target);
-        if(e.target.matches(".descubrimientos li")){
-            
-        };
-    }); */
 };
 
 const RenderQ2 = (lan)=>{
@@ -73,9 +66,11 @@ const RenderQ2 = (lan)=>{
         <div class="filter">
             <div class="clock"></div>    
 
-            <p>${q2Traduction[lan].hero} ${ScienziatiArr[SCIENZIATI_INDEX]} :</p>
+            <article class="hero">
+                <h1>${q2Traduction[lan].hero} <span>${ScienziatiArr[SCIENZIATI_INDEX]}</span> :</h1>            
+            </article>
 
-            <ul class="descubrimientos">
+            <ul class="discoveries">
                 <li data-response="${ScienziatiArr[0]}">${q2Traduction[lan].res1}</li>
                 <li data-response="${ScienziatiArr[1]}">${q2Traduction[lan].res2}</li>
                 <li data-response="${ScienziatiArr[2]}">${q2Traduction[lan].res3}</li>

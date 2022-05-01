@@ -24,3 +24,33 @@ $fsd-xl:3rem;
 //FONT-FAMILY
 $ff-mrr:'Merriweather', serif;
 $ff-pp:'Poppins', sans-serif;
+
+
+//BUTTONS
+%Q-btn{
+    max-width: 260px;
+    padding: 0;
+    list-style: none;    
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    li{            
+        border: 2px solid $yellow;
+        border-radius: 20px;
+        margin:25px 0;
+        cursor: pointer;
+        &:hover{
+            background-color: $yellow;
+            color: #000;
+        }
+    }
+}
+
+
+//HERO
+%hero-general-style{
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 350px;    
+}

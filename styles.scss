@@ -9,13 +9,13 @@
 //COMPONENTS
 @import "styles/home";
 @import "styles/q1";
+@import "styles/q2";
 @import "styles/temporizador";
 @import "styles/emergentCard";
 
 
 body, *{
     margin: 0;    
-    box-sizing: border-box;    
-    //font-family: 'Nunito', sans-serif;    
+    box-sizing: border-box;          
     font-family: $ff-pp;
 }

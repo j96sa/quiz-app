@@ -5,7 +5,7 @@ export default {
         res2:"The Theory of the Evolution of Species",
         res3:"String Theory",
         res4:"AC induction motor",
-        res5:"Ley de la gravedad",
+        res5:"Law of Gravity",
         res6:"Dynamic Unconscious",
     },
 

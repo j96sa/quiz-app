@@ -12,6 +12,7 @@ export const Temporizador = (time,lan)=>{
         let min = Math.floor(staticTime%(1000*60*60)/(1000*60)),
         sec = Math.floor(staticTime%(1000*60)/1000);
         
+        //para que no se ejecute el temporizador fuera del componente (para desenganchar el temporizador y no de error)
         if (d.querySelector(".clock")){
             d.querySelector(".clock").innerHTML = `<p>0${min}:${(sec<10) ?`0${sec}` :sec}</p>`
             staticTime = staticTime - 1000;

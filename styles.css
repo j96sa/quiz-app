@@ -1,6 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@300;400;500;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+.q1 .writers, .q2 .discoveries {
+  max-width: 260px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.q1 .writers li, .q2 .discoveries li {
+  border: 2px solid #F3A317;
+  border-radius: 20px;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+.q1 .writers li:hover, .q2 .discoveries li:hover {
+  background-color: #F3A317;
+  color: #000;
+}
+
+.q1 .hero, .q2 .hero {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 350px;
+}
+
 .home {
   margin: 0;
   background-image: url("https://i.pinimg.com/originals/73/37/dd/7337dd152216decafff639f1761ff09e.jpg");
@@ -254,43 +282,11 @@
           justify-content: space-between;
 }
 
-.q1 .hero {
-  width: 95%;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 350px;
-}
-
-.q1 .hero h2 {
-  font-size: 1.3rem;
-}
-
 .q1 .hero .book-title {
   margin-top: 20px;
   font-size: 2rem;
   color: #F3A317;
   font-family: "Merriweather", serif;
-}
-
-.q1 .writers {
-  max-width: 260px;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.q1 .writers li {
-  border: 2px solid #F3A317;
-  border-radius: 20px;
-  margin: 25px 0;
-  cursor: pointer;
-}
-
-.q1 .writers li:hover {
-  background-color: #F3A317;
-  color: #000;
 }
 
 @media screen and (min-width: 450px) {
@@ -300,9 +296,6 @@
   }
   .q1 .hero {
     max-width: none;
-  }
-  .q1 .hero h2 {
-    font-size: 1.5rem;
   }
   .q1 .hero .book-title {
     font-size: 2.3rem;
@@ -315,16 +308,60 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .q1 .hero {
-    max-width: none;
-  }
-  .q1 .hero h2 {
-    font-size: 2.3rem;
-  }
   .q1 .hero .book-title {
     font-size: 3rem;
   }
   .q1 .writers {
+    max-width: 420px;
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+  }
+}
+
+.q2 {
+  min-height: 100vh;
+  background-image: url("../assets/q2_mobile_wp.jpg");
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.q2 .filter {
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.q2 .hero span {
+  color: #F3A317;
+}
+
+@media screen and (min-width: 450px) {
+  .q2 .hero {
+    max-width: none;
+  }
+  .q2 .discoveries {
+    max-width: 420px;
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .q2 .hero h1 {
+    font-size: 2.3rem;
+  }
+  .q2 .discoveries {
     max-width: 420px;
     font-size: 1.8rem;
     padding-bottom: 20px;

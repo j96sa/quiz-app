@@ -1,6 +1,6 @@
 import { Home } from "./components/home/Home.js";
 import { Leaderboard } from "./components/leaderboard/Leaderboard.js";
-import { Q3 } from "./components/leaderboard/q3/Q3.js";
+import { Q3 } from "./components/q3/Q3.js";
 import { Q1 } from "./components/q1/Q1.js";
 import { Q2 } from "./components/q2/q2.js";
 

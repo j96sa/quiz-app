@@ -23,6 +23,8 @@ const ScienziatiArr = [
     "Sigmund Freud"
 ];
 
+
+//variabile per ottenere lo scienziato dell'array
 const SCIENZIATI_INDEX = Math.floor(ScienziatiArr.length*Math.random());
 
 

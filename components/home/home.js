@@ -55,7 +55,10 @@ const registerUser = ()=>{
                     questions:{
                         q1:{time:"",score:0},
                         q2:{time:"",score:0},
-                        q3:{time:"",score:0}
+                        q3:{time:"",score:0},
+                        q4:{time:"",score:0},
+                        q5:{time:"",score:0},
+                        q6:{time:"",score:0},
                     }
                 }
             )

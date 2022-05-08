@@ -1,0 +1,55 @@
+.q4{
+    min-height: 100vh;
+    background-image: url("../assets/q1_mobile_wp4.jpg");
+    background-size: cover;
+    color: $white;
+    //para poder posicionar la tarjeta emergente dentro del componente
+    position: relative;
+    //
+    
+    .filter{
+        backdrop-filter: blur(.3rem);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hero{
+        @extend %hero-general-style;
+    }
+
+    .dates{
+        @extend %Q-btn;
+    }
+}
+
+@media screen and (min-width:450px){
+    .q4{
+        .hero{
+            max-width: none;
+        }
+
+        .dates{
+            max-width: 420px;
+            font-size: $fst-m ;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width:1100px){
+    .q4{
+        .hero{            
+            h1{
+                font-size: $fst-l;
+            }            
+        }
+
+        .dates{
+            max-width: 420px;
+            font-size: $fsd-m ;
+            padding-bottom: 20px;
+        }
+    }
+}

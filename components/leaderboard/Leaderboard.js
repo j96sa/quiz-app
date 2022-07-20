@@ -12,7 +12,7 @@ const test = ()=>{
 
     d.addEventListener("click",e=>{
         if(e.target.matches(".user-list li")){
-            //console.log(e.target.className);
+            console.log(e.target.className);
 
             location.href = `#/q1/${e.target.className}`
         };

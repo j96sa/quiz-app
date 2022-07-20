@@ -11,8 +11,24 @@ export const Home = ()=>{
     RenderHome(traduction);
     languageChange(traduction);
     registerUser();
+    leaderboardLinkOpen();
     leaderboard.length>0 ?playAgain() :null;
 };
+
+
+/***********************************************************/
+//LEADERBOARD component(opening from home link)
+const leaderboardLinkOpen = ()=>{
+    const $leaderboardLink = d.querySelector(".hero .leaderboard-button");
+
+    $leaderboardLink.addEventListener("click",e=>{
+        location.href = `#/leaderboard`;
+    });
+};
+
+
+/***********************************************************/
+
 
 /* ************************************************************ */
 const playAgain = ()=>{

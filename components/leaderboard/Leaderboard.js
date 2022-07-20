@@ -11,7 +11,7 @@ const test = ()=>{
     const $li = d.querySelectorAll(".user-list li");
 
     d.addEventListener("click",e=>{
-        if(e.target.matches(".user-list li")){
+        if(e.target.matches(".user-list li") && location.hash === "#/playagain-leaderboard"){
             console.log(e.target.className);
 
             location.href = `#/q1/${e.target.className}`

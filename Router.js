@@ -10,7 +10,7 @@ export default function Router(){
 
     if(hash === ""){
         return Home();
-    }else if(hash === "#/leaderboard"){
+    }else if(hash === "#/leaderboard" || hash === "#/playagain-leaderboard"){
         Leaderboard();
     }else if(/^#\/q1\/[a-z0-9]+$/g.test(hash)){
         return Q1();

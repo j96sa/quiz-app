@@ -35,7 +35,7 @@ const playAgain = ()=>{
     const $playButton = d.querySelector(".form .repeat-button");
 
     $playButton.addEventListener("click",e=>{
-        location.href = `#/leaderboard`;
+        location.href = `#/playagain-leaderboard`;
     });
 };
 /* ************************************************************ */

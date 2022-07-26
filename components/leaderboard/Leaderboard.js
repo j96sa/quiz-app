@@ -4,26 +4,41 @@ const $fragment = d.createDocumentFragment();
 export const Leaderboard = ()=>{
     RenderLeaderboard();
     printUsers();
-    test();
+    leaderboardInteractions();
 };
 
-const test = ()=>{
-    const $li = d.querySelectorAll(".user-list li");
-
+const leaderboardInteractions = ()=>{
     d.addEventListener("click",e=>{
+        //validazione per quando se apre il leaderboard dal link play again o dal link leaderboard(nel componente Home)
         if(e.target.matches(".user-list li") && location.hash === "#/playagain-leaderboard"){            
-            location.href = `#/q1/${e.target.className}`
+            location.href = `#/q1/${e.target.className}`;
+        };
+
+        //back to Home
+        if(e.target.matches(".back-arrow svg") || e.target.matches(".back-arrow svg path")){
+            location.href = ``;
         };
     });
 };
+
 
 const printUsers = ()=>{
     const usersArray = JSON.parse(localStorage.getItem("leaderboard"));
     
     usersArray.forEach(e=>{
         let li = d.createElement("li");
-        li.innerText = e.name;
+
+        let $rankNumber = d.createElement("article");
+        $rankNumber.innerHTML = `<p>1st</p>`;
+        
+        let $userStats = d.createElement("article");
+        $userStats.innerHTML = `<p>${e.name}</p> <p>score : ${e.general_score}</p>`;
+                
+        
         li.className = e.id;
+        li.appendChild($rankNumber);
+        li.appendChild($userStats);        
+
         $fragment.appendChild(li);
     });
     

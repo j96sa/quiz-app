@@ -198,8 +198,39 @@
     color: #AC0700;
   }
 }
+.leaderboard {
+  background-color: blueviolet;
+}
 .leaderboard .back-arrow svg {
-  width: 20px;
+  width: 15px;
+  margin: 20px 0 0 10px;
+}
+.leaderboard figure {
+  text-align: center;
+  margin: 25px 0;
+}
+.leaderboard figure img {
+  width: 98%;
+}
+.leaderboard .user-list {
+  background-color: #fff;
+  border-radius: 40px 40px 0 0;
+  padding-top: 25px;
+}
+.leaderboard .user-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: blueviolet;
+  width: 90%;
+  margin: 15px 0;
+  border-radius: 10px;
+  padding: 2px 45px;
+  align-items: center;
+  color: #fff;
+}
+.leaderboard .user-list li article {
+  margin: 0 5px;
 }
 
 .q1 {

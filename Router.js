@@ -21,6 +21,6 @@ export default function Router(){
     }else if(/^#\/q4\/[a-z0-9]+$/g.test(hash)){
         return Q4();
     }else{
-        console.log("CRITICAL ERR");
+        console.log("404: ROUTER ERR");
     }
 };

@@ -52,10 +52,10 @@ const questionValidation = ()=>{
             };
 
             if (e.target.dataset.response === ScienziatiArr[SCIENZIATI_INDEX]) {                
-                userInfoMod(finalTime,score);
+                userInfoMod(score);
                 EmergentCard(finalTime,score);
             }else{                
-                userInfoMod(finalTime,0);
+                userInfoMod(0);
                 EmergentCard(finalTime,0);
             };
         });

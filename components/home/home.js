@@ -45,7 +45,7 @@ const playAgain = ()=>{
 const registerUser = ()=>{
     const $inputBtnStart = d.querySelector(".form .form-button"),
     $form = d.querySelector(".filter .form"),
-    $inputBtnRepeat = d.querySelector(".form .repeat-button"),
+    //$inputBtnRepeat = d.querySelector(".form .repeat-button"),
     $inputText = d.querySelector(`.form [type="text"]`);
     
 
@@ -66,16 +66,7 @@ const registerUser = ()=>{
                 {
                     id,
                     name:userName,
-                    general_score:0,
-                    general_time_response:"",
-                    questions:{
-                        q1:{time:"",score:0},
-                        q2:{time:"",score:0},
-                        q3:{time:"",score:0},
-                        q4:{time:"",score:0},
-                        q5:{time:"",score:0},
-                        q6:{time:"",score:0},
-                    }
+                    score:0
                 }
             )
                 

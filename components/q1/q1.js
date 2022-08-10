@@ -44,7 +44,8 @@ const BOOK_INDEX = Math.floor(Math.random()*BooksArr.length);
 
 
 /* * * * CONSTANTE PARA EXPORTAR EL COMPONENTE * * * */
-export const Q1 = ()=>{     
+export const Q1 = ()=>{  
+    //console.log(q1Traduction);   
     const LANGUAGE = localStorage.getItem("language");
     RenderQ1(BOOK_INDEX,LANGUAGE);    
     questionValidation(BOOK_INDEX,LANGUAGE);    
@@ -72,10 +73,10 @@ const questionValidation = (bookIndex,lan)=>{
             };
             
             if(e.target.dataset.response === BooksArr[bookIndex].book[lan]){
-                userInfoMod(finalTime,score);                
+                userInfoMod(score);                
                 EmergentCard(finalTime,score);                
             }else{
-                userInfoMod(finalTime,0);
+                userInfoMod(0);
                 EmergentCard(finalTime,0);
             };
         };
@@ -91,7 +92,7 @@ const RenderQ1 = (bookIndex,lan)=>{
             <div class="clock"></div>    
 
             <article class="hero">  
-                <h1>${q1Traduction[lan].h2}</h1>                          
+                <h1>${q1Traduction[lan].h2}</h1>
                 <h2 class="book-title">"${BooksArr[bookIndex].book[lan]}"</h2>
             </article>
 

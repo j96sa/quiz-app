@@ -7,11 +7,11 @@ export const Leaderboard = ()=>{
     leaderboardInteractions();
 };
 
-const leaderboardInteractions = ()=>{
+const leaderboardInteractions = ()=>{    
     d.addEventListener("click",e=>{
         //validazione per quando se apre il leaderboard dal link play again o dal link leaderboard(nel componente Home)
-        if(e.target.matches(".user-list li") && location.hash === "#/playagain-leaderboard"){            
-            location.href = `#/q1/${e.target.className}`;
+        if((e.target.matches(".user-list li") || e.target.matches(".user-list li *")) && location.hash === "#/playagain-leaderboard"){
+            location.href = `#/q1/${e.target.className}`;            
         };
 
         //back to Home
@@ -29,10 +29,10 @@ const printUsers = ()=>{
         let li = d.createElement("li");
 
         let $rankNumber = d.createElement("article");
-        $rankNumber.innerHTML = `<p>1st</p>`;
+        $rankNumber.innerHTML = `<p class="${e.id}">1st</p>`;
         
         let $userStats = d.createElement("article");
-        $userStats.innerHTML = `<p>${e.name}</p> <p>score : ${e.score}</p>`;
+        $userStats.innerHTML = `<p class="${e.id}">${e.name}</p> <p class="${e.id}">score : ${e.score}</p>`;
                 
         
         li.className = e.id;

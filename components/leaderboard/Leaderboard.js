@@ -1,12 +1,14 @@
 const d = document;
 const $fragment = d.createDocumentFragment();
 
+//ORDEN LOGICO DE LA FUNCIONALDAD DEL COMPONENTE
 export const Leaderboard = ()=>{    
     RenderLeaderboard();
     printUsers();
     leaderboardInteractions();
 };
 
+/* FUNCION QUE CONTROLA TODAS LAS INTERACCIONES DEL COMPONENTE */
 const leaderboardInteractions = ()=>{    
     d.addEventListener("click",e=>{
         //validazione per quando se apre il leaderboard dal link play again o dal link leaderboard(nel componente Home)
@@ -21,30 +23,31 @@ const leaderboardInteractions = ()=>{
     });
 };
 
-
+/* FUNCION QUE PARA DIBUJAR LOS USUARIOS EN PANTALLA, ASI COMO PARA CONTROLAR EN QUE ORDEN SE VAN A MOSTRAR */
 const printUsers = ()=>{
-    const usersArray = JSON.parse(localStorage.getItem("leaderboard"));
-    
-    usersArray.forEach(e=>{
+    const usersArray = JSON.parse(localStorage.getItem("leaderboard"));     
+    const orderArr = usersArray.sort(((a, b)=> b.score - a.score)) 
+        
+    for (let i=0; i < orderArr.length; i++){
         let li = d.createElement("li");
 
         let $rankNumber = d.createElement("article");
-        $rankNumber.innerHTML = `<p class="${e.id}">1st</p>`;
+        $rankNumber.innerHTML = `<p class="${orderArr[i].id}">#${i+1}</p>`;
         
         let $userStats = d.createElement("article");
-        $userStats.innerHTML = `<p class="${e.id}">${e.name}</p> <p class="${e.id}">score : ${e.score}</p>`;
-                
-        
-        li.className = e.id;
+        $userStats.innerHTML = `<p class="${orderArr[i].id}">${orderArr[i].name}</p> <p class="${orderArr[i].id}">score : ${orderArr[i].score}</p>`;
+                        
+        li.className = orderArr[i].id;
         li.appendChild($rankNumber);
         li.appendChild($userStats);        
 
         $fragment.appendChild(li);
-    });
-    
+    };
+
     d.querySelector(".user-list ul").appendChild($fragment);
 };
 
+/* FUNCION PARA RENDERIZAR EL COMPONENTE */
 const RenderLeaderboard = ()=>{
     d.getElementById("root").innerHTML = `
         <div class="leaderboard">        

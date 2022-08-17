@@ -34,10 +34,7 @@ export const userInfoMod = (score)=>{
                 default:
                 break;
             };
-
-            //QUESTION === "1" ?user.score = score :user.score = score + user.score;
-            //Math.round(x*10)/10
-            //((score+user.score)/2)*10;
+        
             localStorage.setItem("leaderboard",JSON.stringify(userArray));
         };
     });

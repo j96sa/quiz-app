@@ -7,7 +7,7 @@ ls = localStorage,
 leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
 //RUTA EN LA QUE SE EJECUTAN LAS FUNCIONES(para que se ejecuten en un orden logico && asi lo tengo mas organizado y solo tengo que importar en el router un solo componente)
-export const Home = ()=>{
+export const Home = ()=>{    
     RenderHome(traduction);
     languageChange(traduction);
     registerUser();
@@ -44,8 +44,7 @@ const playAgain = ()=>{
 //LOGICA PARA INSERTAR A LOS USUARIOS EN EL LOCALSTORAGE
 const registerUser = ()=>{
     const $inputBtnStart = d.querySelector(".form .form-button"),
-    $form = d.querySelector(".filter .form"),
-    //$inputBtnRepeat = d.querySelector(".form .repeat-button"),
+    $form = d.querySelector(".filter .form"),    
     $inputText = d.querySelector(`.form [type="text"]`);
     
 
@@ -66,7 +65,8 @@ const registerUser = ()=>{
                 {
                     id,
                     name:userName,
-                    score:0
+                    score:0,
+                    acumulated_score:0
                 }
             )
                 
@@ -180,5 +180,6 @@ const RenderHome = (trad)=>{
     </div>`;
 
     // PARA QUE CADA VEZ QUE SE ACTUALICE EL COMPONENTE MANTENGA EL LENGUAGE SELECCIONADO POR EL USUARIO
-    traductionFunction(ls.getItem("language"),trad);    
+    //traductionFunction(ls.getItem("language")!==null ?(ls.setItem("language"),trad) :("es",trad));    
+    ls.getItem("language")!==null ?traductionFunction(ls.getItem("language"),trad) :traductionFunction("es",trad)
 };

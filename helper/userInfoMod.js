@@ -8,9 +8,36 @@ export const userInfoMod = (score)=>{
 
     userArray.forEach(user=>{
         if(user.id === userID){
-                                             
-            QUESTION === "1" ?user.score = score :user.score = Math.round(((score+user.score)/2)*10)/10;
+            console.log(score);
             
+            switch (QUESTION) {
+                case "1":
+                    user.score = score
+                    user.acumulated_score = score
+                break;
+
+                case "2":
+                    user.acumulated_score = user.acumulated_score + score;
+                    user.score = user.acumulated_score/2
+                break;
+
+                case "3":
+                    user.acumulated_score = user.acumulated_score + score;
+                    user.score = user.acumulated_score/3
+                break;
+
+                case "4":
+                    user.acumulated_score = user.acumulated_score + score;
+                    user.score = Math.round((user.acumulated_score/4)*10)/10
+                break;
+            
+                default:
+                break;
+            };
+
+            //QUESTION === "1" ?user.score = score :user.score = score + user.score;
+            //Math.round(x*10)/10
+            //((score+user.score)/2)*10;
             localStorage.setItem("leaderboard",JSON.stringify(userArray));
         };
     });

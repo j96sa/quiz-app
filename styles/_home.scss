@@ -42,15 +42,15 @@
                 }
             }
 
-            select{
+            select{                                                
                 border: none;
                 width: fit-content;            
                 border-radius: 15px;
                 outline: none;  
                 background-color: $red; 
                 color: $white;  
-                cursor: pointer; 
-                
+                cursor: pointer;                 
+
                 &:hover{
                     background: $red-hover;                    
                 }

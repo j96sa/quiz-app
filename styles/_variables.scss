@@ -49,6 +49,23 @@ $ff-pp:'Poppins', sans-serif;
     }
 }
 
+//COMPONENTS MAIN STYLES
+%components_main_styles{
+    min-height: 100vh;    
+    background-size: cover;
+    color: $white;
+    //para poder posicionar la tarjeta emergente dentro del componente
+    position: relative;
+    //
+    
+    .filter{
+        backdrop-filter: blur(.3rem);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
 
 //HERO
 %hero-general-style{

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@300;400;500;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-.q4 .dates, .q3 .capitals, .q2 .discoveries, .q1 .writers {
+.q5 .artist_list, .q4 .dates, .q3 .capitals, .q2 .discoveries, .q1 .writers {
   max-width: 260px;
   padding: 0;
   list-style: none;
@@ -9,18 +9,33 @@
   width: 90%;
   margin: 0 auto;
 }
-.q4 .dates li, .q3 .capitals li, .q2 .discoveries li, .q1 .writers li {
+.q5 .artist_list li, .q4 .dates li, .q3 .capitals li, .q2 .discoveries li, .q1 .writers li {
   border: 2px solid #F3A317;
   border-radius: 20px;
   margin: 25px 0;
   cursor: pointer;
 }
-.q4 .dates li:hover, .q3 .capitals li:hover, .q2 .discoveries li:hover, .q1 .writers li:hover {
+.q5 .artist_list li:hover, .q4 .dates li:hover, .q3 .capitals li:hover, .q2 .discoveries li:hover, .q1 .writers li:hover {
   background-color: #F3A317;
   color: #000;
 }
 
-.q4 .hero, .q3 .hero, .q2 .hero, .q1 .hero {
+.q5, .q4, .q3, .q2, .q1 {
+  min-height: 100vh;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+.q5 .filter, .q4 .filter, .q3 .filter, .q2 .filter, .q1 .filter {
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.q5 .hero, .q4 .hero, .q3 .hero, .q2 .hero, .q1 .hero {
   width: 95%;
   margin: 0 auto;
   text-align: center;
@@ -266,18 +281,6 @@
 }
 .q1 {
   background-image: url("../assets/q1_mobile_wp4.jpg");
-  background-size: cover;
-  color: #fff;
-  min-height: 100vh;
-  position: relative;
-}
-.q1 .filter {
-  -webkit-backdrop-filter: blur(0.3rem);
-          backdrop-filter: blur(0.3rem);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .q1 .hero .book-title {
   margin-top: 20px;
@@ -313,19 +316,7 @@
   }
 }
 .q2 {
-  min-height: 100vh;
   background-image: url("../assets/q2_mobile_wp.jpg");
-  background-size: cover;
-  color: #fff;
-  position: relative;
-}
-.q2 .filter {
-  -webkit-backdrop-filter: blur(0.3rem);
-          backdrop-filter: blur(0.3rem);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .q2 .hero span {
   color: #F3A317;
@@ -351,18 +342,8 @@
   }
 }
 .q3 {
-  min-height: 100vh;
   background-image: url("../assets/q3_mobile_wp4.jpg");
-  background-size: cover;
-  position: relative;
-}
-.q3 .filter {
-  -webkit-backdrop-filter: blur(0.3rem);
-          backdrop-filter: blur(0.3rem);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  color: #000;
 }
 @media screen and (min-width: 450px) {
   .q3 .hero {
@@ -385,19 +366,7 @@
   }
 }
 .q4 {
-  min-height: 100vh;
   background-image: url("../assets/q1_mobile_wp4.jpg");
-  background-size: cover;
-  color: #fff;
-  position: relative;
-}
-.q4 .filter {
-  -webkit-backdrop-filter: blur(0.3rem);
-          backdrop-filter: blur(0.3rem);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 @media screen and (min-width: 450px) {
   .q4 .hero {
@@ -414,6 +383,32 @@
     font-size: 2.3rem;
   }
   .q4 .dates {
+    max-width: 420px;
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+  }
+}
+.q5 {
+  background-image: url("../assets/q2_mobile_wp.jpg");
+}
+.q5 .hero span {
+  color: #F3A317;
+}
+@media screen and (min-width: 450px) {
+  .q5 .hero {
+    max-width: none;
+  }
+  .q5 .artist_list {
+    max-width: 420px;
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .q5 .hero h1 {
+    font-size: 2.3rem;
+  }
+  .q5 .artist_list {
     max-width: 420px;
     font-size: 1.8rem;
     padding-bottom: 20px;

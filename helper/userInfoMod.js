@@ -7,8 +7,7 @@ export const userInfoMod = (score)=>{
     const QUESTION = location.hash.substring(3,4);
 
     userArray.forEach(user=>{
-        if(user.id === userID){
-            console.log(score);
+        if(user.id === userID){            
             
             switch (QUESTION) {
                 case "1":
@@ -28,7 +27,12 @@ export const userInfoMod = (score)=>{
 
                 case "4":
                     user.acumulated_score = user.acumulated_score + score;
-                    user.score = Math.round((user.acumulated_score/4)*10)/10
+                    user.score = user.acumulated_score/4
+                break;
+
+                case "5":
+                    user.acumulated_score = user.acumulated_score + score;
+                    user.score = Math.round((user.acumulated_score/5)*10)/10
                 break;
             
                 default:

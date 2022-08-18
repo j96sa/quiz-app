@@ -12,7 +12,7 @@ export const Home = ()=>{
     languageChange(traduction);
     registerUser();
     leaderboardLinkOpen();
-    leaderboard.length>0 ?playAgain() :null;
+    leaderboard.length>0 ?playAgain() :null;    
 };
 
 

@@ -1,24 +1,26 @@
-.q3{
-    background-image: url("../assets/q3_mobile_wp4.jpg");
+.q5{
+    background-image: url("../assets/q2_mobile_wp.jpg");
     @extend %components_main_styles;
-    color:#000;
-
+    
     .hero{
         @extend %hero-general-style;
+        span{
+            color: $yellow
+        }
     }
 
-    .capitals{
+    .artist_list{
         @extend %Q-btn;
     }
 }
 
 @media screen and (min-width:450px){
-    .q3{
+    .q5{
         .hero{
             max-width: none;
         }
 
-        .capitals{
+        .artist_list{
             max-width: 420px;
             font-size: $fst-m ;
             padding-bottom: 20px;
@@ -27,14 +29,14 @@
 }
 
 @media screen and (min-width:1100px){
-    .q3{
+    .q5{
         .hero{            
             h1{
                 font-size: $fst-l;
             }            
         }
 
-        .capitals{
+        .artist_list{
             max-width: 420px;
             font-size: $fsd-m ;
             padding-bottom: 20px;

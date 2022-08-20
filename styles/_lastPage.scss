@@ -1,0 +1,82 @@
+.lastpage{
+    background-image: url("../assets/quiz-background-mobile.jpg");
+    min-height: 100vh;
+    color: black;    
+    
+    .filter{
+        backdrop-filter: blur(.5rem);    
+        min-height: 100vh;
+        text-align: center;
+        padding-top: 80px;
+        font-weight: 700;
+
+        font-size: $fsm-m;
+        color: $purple;
+        h1,p{
+            max-width: 95%;
+            margin: 10px auto;
+            max-width: 945px;
+        }
+        
+        h1{
+            font-size: $fsm-xl;
+            color: $yellow;
+            font-family: $ff-mrr;
+            margin-bottom: 30px;
+        }
+        p:nth-child(3){
+            color: $red;
+        }
+
+        button{
+            margin-top: 50px;
+            width: 30%;
+            border: 2px solid $red;
+            border-radius: 5px;
+            color: $purple;
+            background: transparent; 
+            padding: 5px 0; 
+            max-width: 135px;
+            cursor: pointer;         
+            &:hover{
+                background-color: $yellow;
+                color: $red;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:750px) {
+    .lastpage{
+        background-image: url(../assets/quiz-background-tbt.jpg);
+        .filter{
+            font-size: $fst-m;
+            
+            h1{
+                font-size:$fst-l;
+            }
+
+            button{
+                font-size:$fst-s;                
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .lastpage{
+        background-image: url("../assets/quiz-background-dsk.jpg");
+        .filter{
+            padding-top: 200px;
+            font-size: $fsd-m;
+            
+            h1{
+                font-size:$fsd-xl;
+            }
+
+            button{
+                font-size:$fst-s;                
+            }
+        }
+    }
+}

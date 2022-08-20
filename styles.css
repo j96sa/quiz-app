@@ -44,7 +44,7 @@
 
 .home {
   margin: 0;
-  background-image: url("https://i.pinimg.com/originals/73/37/dd/7337dd152216decafff639f1761ff09e.jpg");
+  background-image: url("../assets/quiz-background-mobile.jpg");
   background-size: cover;
   /* ESTILOS PARA MOSTRAR EL MENSAJE DE ERROR CUANDO NO SE INTRUDUZCA EL NOMBRE CORRECTAMENTE */
 }
@@ -558,6 +558,80 @@
   }
   .emergent-card .card-buttons button {
     font-size: 1.8rem;
+  }
+}
+.lastpage {
+  background-image: url("../assets/quiz-background-mobile.jpg");
+  min-height: 100vh;
+  color: black;
+}
+.lastpage .filter {
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 80px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #211768;
+}
+.lastpage .filter h1, .lastpage .filter p {
+  max-width: 95%;
+  margin: 10px auto;
+  max-width: 945px;
+}
+.lastpage .filter h1 {
+  font-size: 2rem;
+  color: #F3A317;
+  font-family: "Merriweather", serif;
+  margin-bottom: 30px;
+}
+.lastpage .filter p:nth-child(3) {
+  color: #AC0700;
+}
+.lastpage .filter button {
+  margin-top: 50px;
+  width: 30%;
+  border: 2px solid #AC0700;
+  border-radius: 5px;
+  color: #211768;
+  background: transparent;
+  padding: 5px 0;
+  max-width: 135px;
+  cursor: pointer;
+}
+.lastpage .filter button:hover {
+  background-color: #F3A317;
+  color: #AC0700;
+}
+
+@media screen and (min-width: 750px) {
+  .lastpage {
+    background-image: url(../assets/quiz-background-tbt.jpg);
+  }
+  .lastpage .filter {
+    font-size: 1.5rem;
+  }
+  .lastpage .filter h1 {
+    font-size: 2.3rem;
+  }
+  .lastpage .filter button {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .lastpage {
+    background-image: url("../assets/quiz-background-dsk.jpg");
+  }
+  .lastpage .filter {
+    padding-top: 200px;
+    font-size: 1.8rem;
+  }
+  .lastpage .filter h1 {
+    font-size: 3rem;
+  }
+  .lastpage .filter button {
+    font-size: 1.1rem;
   }
 }
 body, * {

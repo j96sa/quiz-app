@@ -57,6 +57,7 @@ const ComponentLogic = (time)=>{
     }, 200);
 
     //para redirigir la pagina despues de hacer click en una de las opciones del EMERGENT-CARD
-    $exit.addEventListener("click",e=>location.href=``);
-    $next.addEventListener("click",e=>location.href = `#/q${parseInt(location.hash[3])+1}/${location.hash.substring(5)}`);    
+    $exit.addEventListener("click",e=>location.href=``);    
+    $next.addEventListener("click",e=> location.hash[3]==="5" ?location.href = `#/lastpage` :location.href = `#/q${parseInt(location.hash[3])+1}/${location.hash.substring(5)}`);    
+
 };

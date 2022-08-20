@@ -24,6 +24,7 @@
     
     .user-list{
         background-color:$white ;
+        //font-size: $fsm-m;         
         border-radius: 40px 40px 0 0;
         padding-top: 25px;
         max-width: 626px;        
@@ -34,7 +35,7 @@
             padding: 0 0 15px 0;            
         }
         
-        li{            
+        li{   
             list-style: none;            
             display: flex;
             justify-content: space-between;
@@ -50,6 +51,14 @@
 
             article{
                 margin: 0 5px;                
+            }
+            article:nth-child(2){
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-around;
+                p:nth-child(1){                    
+                    color: $yellow;
+                }
             }
 
             &:hover{
@@ -70,6 +79,7 @@
         .user-list{
             margin: 0 auto;
             min-width: 621px;
+            font-size: $fst-m;            
         }
     }
 }

@@ -13,7 +13,7 @@ export default {
 
     en:{
         h1:"CONGRATULATION",
-        p1:"You have managed to finish the Quiz, we are sorry to tell you that for now we have no more questions to show,",
+        p1:"You have managed to finish the Quiz, we are sorry to tell you that for now we have no more questions to show.",
         p2:"An update with more content will arrive as soon as possible."
     }
 }

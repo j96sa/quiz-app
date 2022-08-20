@@ -9,7 +9,7 @@ export const Q5 = ()=>{
     const LANGUAGE = localStorage.getItem("language");
     RenderQ5(LANGUAGE);
     questionValidation();
-    Temporizador(500000,LANGUAGE);
+    Temporizador(50000,LANGUAGE);
 };
 
 const SongLs = ["Imagine","Mama","Thriller","Titanic","Halo"]
@@ -25,7 +25,7 @@ const questionValidation = (e)=> {
         li.addEventListener("click",e=>{
             const finalTime = Math.round((Date.now() - startTime)/1000);
 
-            if(finalTime < 12){
+            if(finalTime < 10){
                 score = 5;
             }else if(finalTime < 24){
                 score = 4;

@@ -58,7 +58,7 @@ const RenderLeaderboard = ()=>{
                 </div>
 
                 <figure>
-                    <img src="../../assets/winner.svg" alt="img">
+                    <img src="./assets/winner.svg" alt="img">
                 </figure>            
             </section>
                         

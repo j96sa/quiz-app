@@ -44,7 +44,7 @@
 
 .home {
   margin: 0;
-  background-image: url("../assets/quiz-background-mobile.jpg");
+  background-image: url(./assets/quiz-background-mobile.jpg);
   background-size: cover;
   /* ESTILOS PARA MOSTRAR EL MENSAJE DE ERROR CUANDO NO SE INTRUDUZCA EL NOMBRE CORRECTAMENTE */
 }
@@ -289,7 +289,7 @@
   }
 }
 .q1 {
-  background-image: url("../assets/q1_mobile_wp4.jpg");
+  background-image: url(./assets/q1_mobile_wp4.jpg);
 }
 .q1 .hero .book-title {
   margin-top: 20px;
@@ -325,7 +325,7 @@
   }
 }
 .q2 {
-  background-image: url("../assets/q2_mobile_wp.jpg");
+  background-image: url(./assets/q2_mobile_wp.jpg);
 }
 .q2 .hero span {
   color: #F3A317;
@@ -351,7 +351,7 @@
   }
 }
 .q3 {
-  background-image: url("../assets/q3_mobile_wp4.jpg");
+  background-image: url(./assets/q3_mobile_wp4.jpg);
   color: #000;
 }
 @media screen and (min-width: 450px) {
@@ -375,7 +375,7 @@
   }
 }
 .q4 {
-  background-image: url("../assets/q1_mobile_wp4.jpg");
+  background-image: url(./assets/q1_mobile_wp4.jpg);
 }
 @media screen and (min-width: 450px) {
   .q4 .hero {
@@ -398,7 +398,7 @@
   }
 }
 .q5 {
-  background-image: url("../assets/q2_mobile_wp.jpg");
+  background-image: url(./assets/q2_mobile_wp.jpg);
 }
 .q5 .hero span {
   color: #F3A317;
@@ -570,7 +570,7 @@
   }
 }
 .lastpage {
-  background-image: url("../assets/quiz-background-mobile.jpg");
+  background-image: url(./assets/quiz-background-mobile.jpg);
   min-height: 100vh;
   color: black;
 }

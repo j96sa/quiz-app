@@ -243,6 +243,7 @@
   padding: 0 0 15px 0;
 }
 .leaderboard .user-list li {
+  z-index: 500;
   list-style: none;
   display: flex;
   justify-content: space-between;

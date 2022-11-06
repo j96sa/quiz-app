@@ -13,7 +13,7 @@ const leaderboardInteractions = ()=>{
     d.addEventListener("click",e=>{
         //validazione per quando se apre il leaderboard dal link play again o dal link leaderboard(nel componente Home)
         if((e.target.matches(".user-list li") || e.target.matches(".user-list li *")) && location.hash === "#/playagain-leaderboard"){
-            location.href = `#/q1/${e.target.className}`;            
+            location.href = `#/q1/${e.target.className}`;                        
         };
 
         //back to Home
@@ -36,8 +36,8 @@ const printUsers = ()=>{
         
         let $userStats = d.createElement("article");
         $userStats.innerHTML = `<p class="${orderArr[i].id}">${orderArr[i].name}</p> <p class="${orderArr[i].id}">score : ${orderArr[i].score}</p>`;
-                        
-        li.className = orderArr[i].id;
+        $userStats.className = orderArr[i].id;
+                
         li.appendChild($rankNumber);
         li.appendChild($userStats);        
 

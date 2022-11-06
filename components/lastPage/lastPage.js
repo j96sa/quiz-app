@@ -10,7 +10,11 @@ export const LastPage = ()=>{
 
 const componentInteractions = ()=>{
     const $butt = d.querySelector(".lastpage .butt");    
-    $butt.addEventListener("click",e=>location.hash="");
+        
+    $butt.addEventListener("click",()=>{
+        location.hash=""
+        location.reload();
+    });
 };
 
 

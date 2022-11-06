@@ -7,7 +7,8 @@ ls = localStorage,
 leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
 //RUTA EN LA QUE SE EJECUTAN LAS FUNCIONES(para que se ejecuten en un orden logico && asi lo tengo mas organizado y solo tengo que importar en el router un solo componente)
-export const Home = ()=>{    
+export const Home = ()=>{ 
+    
     RenderHome(traduction);
     languageChange(traduction);
     registerUser();

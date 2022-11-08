@@ -37,7 +37,8 @@ const printUsers = ()=>{
         let $userStats = d.createElement("article");
         $userStats.innerHTML = `<p class="${orderArr[i].id}">${orderArr[i].name}</p> <p class="${orderArr[i].id}">score : ${orderArr[i].score}</p>`;
         $userStats.className = orderArr[i].id;
-                
+               
+        li.className = orderArr[i].id;
         li.appendChild($rankNumber);
         li.appendChild($userStats);        
 
